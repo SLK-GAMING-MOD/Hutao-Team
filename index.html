@@ -46,7 +46,6 @@ body{
   overflow-x:hidden;  
 }  
   
-/* BACKGROUND */  
 .bg-blur{  
   position:fixed;  
   width:600px;  
@@ -60,7 +59,6 @@ body{
 .bg1{ background:var(--cyan); top:-200px; left:-150px; }  
 .bg2{ background:var(--purple); right:-180px; top:120px; }  
   
-/* NAVBAR */  
 nav{  
   position:sticky;  
   top:0;  
@@ -74,12 +72,11 @@ nav{
   border-bottom:1px solid rgba(255,255,255,.05);  
 }  
   
-/* LOGO FIX LEFT */  
 .logo-wrap{  
   display:flex;  
   align-items:center;  
-  gap:10px;  
-  transform:translateX(-10px);  
+  gap:8px;  
+  transform:translateX(-18px);  
 }  
   
 .logo-icon{  
@@ -89,18 +86,17 @@ nav{
   display:flex;  
   align-items:center;  
   justify-content:center;  
-  font-size:22px;  
+  overflow:hidden;  
   background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2));  
   border:1px solid rgba(255,255,255,.08);  
   box-shadow:var(--glow);  
-  overflow:hidden;  
 }  
-
-.logo-icon img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+  
+.logo-icon img{  
+  width:100%;  
+  height:100%;  
+  object-fit:cover;  
+}  
   
 .logo{  
   font-size:25px;  
@@ -111,7 +107,6 @@ nav{
   -webkit-text-fill-color:transparent;  
 }  
   
-/* NAV LINKS */  
 .nav-links{  
   display:flex;  
   gap:28px;  
@@ -126,7 +121,6 @@ nav{
   
 .nav-links a:hover{ color:var(--cyan); }  
   
-/* HERO */  
 .hero{  
   min-height:82vh;  
   display:flex;  
@@ -178,7 +172,6 @@ nav{
   line-height:1.7;  
 }  
   
-/* BUTTONS FIX CLICK */  
 .hero-buttons{  
   margin-top:30px;  
   display:flex;  
@@ -221,7 +214,6 @@ nav{
   color:var(--cyan);  
 }  
   
-/* STATS */  
 .stats{  
   margin-top:55px;  
   display:flex;  
@@ -251,7 +243,6 @@ nav{
   font-size:14px;  
 }  
   
-/* SECTIONS */  
 .section{ padding:75px 7%; }  
   
 .section-top{  
@@ -275,7 +266,6 @@ nav{
   margin-top:12px;  
 }  
   
-/* GRID */  
 .grid{  
   display:grid;  
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));  
@@ -438,8 +428,8 @@ footer p{ color:var(--text2); }
   
 <nav>  
 <div class="logo-wrap">  
-<div class="logo-icon">
-<img src="hutaoteam.png" alt="logo">
+<div class="logo-icon">  
+<img src="hutaoteam.png" alt="logo">  
 </div>  
 <div class="logo">Hutao Team</div>  
 </div>  
@@ -526,7 +516,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
   
 <section class="section">  
 <div class="section-top">  
-<span>TRENDING</span>  
+<span>ALL FILE APK</span>  
 <h2>Popular Downloads</h2>  
 <p>Most downloaded APKs and scripts this week.</p>  
 </div>  
@@ -608,4 +598,4 @@ YouTube Channel
 </footer>  
   
 </body>  
-</html>```
+</html>
