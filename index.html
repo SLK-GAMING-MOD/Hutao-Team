@@ -22,25 +22,27 @@
       font-family:sans-serif;
       color:white;
 
-      min-height:200vh;
-
-      backdrop-filter:brightness(0.6);
+      min-height:100vh;
     }
 
     .overlay{
+
       width:100%;
-      min-height:200vh;
+      min-height:100vh;
 
-      background:rgba(0,0,0,0.55);
+      background:rgba(0,0,0,0.6);
 
-      padding:40px 20px;
+      padding:30px 20px;
+
+      display:flex;
+      flex-direction:column;
     }
 
     .title{
 
       text-align:center;
-      margin-top:40px;
-      margin-bottom:60px;
+      margin-top:30px;
+      margin-bottom:40px;
 
     }
 
@@ -51,6 +53,42 @@
 
     }
 
+    .search-box{
+
+      width:90%;
+      max-width:700px;
+
+      margin:auto;
+      margin-bottom:40px;
+
+    }
+
+    .search-box input{
+
+      width:100%;
+
+      padding:18px;
+
+      border:none;
+      border-radius:20px;
+
+      background:rgba(30,30,30,0.9);
+
+      color:white;
+
+      font-size:18px;
+
+      outline:none;
+
+      box-shadow:0 0 15px red;
+
+    }
+
+    .container{
+
+      flex:1;
+    }
+
     .box{
 
       width:90%;
@@ -59,13 +97,21 @@
       margin:auto;
       margin-bottom:40px;
 
-      background:rgba(20,20,20,0.75);
+      background:rgba(20,20,20,0.8);
 
       border-radius:25px;
 
       padding:30px;
 
       box-shadow:0 0 20px red;
+
+      transition:0.3s;
+
+    }
+
+    .box:hover{
+
+      transform:scale(1.02);
 
     }
 
@@ -120,9 +166,8 @@
 
       text-align:center;
 
-      margin-top:120px;
-
-      padding-bottom:50px;
+      padding-top:80px;
+      padding-bottom:20px;
 
       font-size:18px;
 
@@ -146,26 +191,47 @@
 
 
 
+    <div class="search-box">
 
-    <div class="box">
-
-      <h2># Cài Đặt Roblox</h2>
-
-      <p>
-        Delta x VNG new !!
-      </p>
-
-      <a class="download-btn"
-      href="https://www.mediafire.com/"
-      target="_blank">
-
-      Tải Tệp APK
-
-      </a>
+      <input type="text"
+      id="searchInput"
+      placeholder="Tìm kiếm mục...">
 
     </div>
 
 
+
+
+
+    <div class="container" id="container">
+
+
+
+
+      <div class="box">
+
+        <h2># Cài Đặt Roblox</h2>
+
+        <p>
+          Delta x VNG new !!
+        </p>
+
+        <a class="download-btn"
+        href="https://www.mediafire.com/"
+        target="_blank">
+
+        Tải Tệp APK
+
+        </a>
+
+      </div>
+
+
+
+
+
+
+    </div>
 
 
 
@@ -178,6 +244,41 @@
     </footer>
 
   </div>
+
+
+
+
+
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+
+  let filter = searchInput.value.toLowerCase();
+
+  let boxes = document.getElementsByClassName("box");
+
+  for(let i = 0; i < boxes.length; i++){
+
+    let text = boxes[i].innerText.toLowerCase();
+
+    if(text.includes(filter)){
+
+      boxes[i].style.display = "";
+
+    }else{
+
+      boxes[i].style.display = "none";
+
+    }
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>
