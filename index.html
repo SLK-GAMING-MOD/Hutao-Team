@@ -3,247 +3,426 @@
 <head>
   <title>Hutao Team</title>
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
+body{
 
-      background-image:url("Background.png");
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
+  background-image:url("Background.png");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 
-      font-family:sans-serif;
-      color:white;
+  font-family:sans-serif;
+  color:white;
 
-      min-height:100vh;
-    }
+}
 
-    .overlay{
+.overlay{
 
-      width:100%;
-      min-height:100vh;
+  min-height:100vh;
 
-      background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.6);
 
-      padding:30px 20px;
+  padding:20px;
 
-      display:flex;
-      flex-direction:column;
-    }
+}
 
-    .title{
 
-      text-align:center;
-      margin-top:30px;
-      margin-bottom:40px;
 
-    }
 
-    .title h1{
 
-      font-size:60px;
-      text-shadow:0 0 20px red;
 
-    }
+.menu-btn{
 
-    .search-box{
+  font-size:35px;
 
-      width:90%;
-      max-width:700px;
+  cursor:pointer;
 
-      margin:auto;
-      margin-bottom:40px;
+  width:60px;
 
-    }
+  text-align:center;
 
-    .search-box input{
+  margin-bottom:20px;
 
-      width:100%;
+}
 
-      padding:18px;
+.sidebar{
 
-      border:none;
-      border-radius:20px;
+  position:fixed;
 
-      background:rgba(30,30,30,0.9);
+  top:0;
+  left:-250px;
 
-      color:white;
+  width:250px;
+  height:100%;
 
-      font-size:18px;
+  background:#111;
 
-      outline:none;
+  padding-top:80px;
 
-      box-shadow:0 0 15px red;
+  transition:0.3s;
 
-    }
+  z-index:999;
 
-    .container{
+}
 
-      flex:1;
-    }
+.sidebar a{
 
-    .box{
+  display:block;
 
-      width:90%;
-      max-width:700px;
+  padding:20px;
 
-      margin:auto;
-      margin-bottom:40px;
+  color:white;
 
-      background:rgba(20,20,20,0.8);
+  text-decoration:none;
 
-      border-radius:25px;
+  font-size:22px;
 
-      padding:30px;
+  border-bottom:1px solid #333;
 
-      box-shadow:0 0 20px red;
+}
 
-      transition:0.3s;
+.sidebar a:hover{
 
-    }
+  background:red;
 
-    .box:hover{
+}
 
-      transform:scale(1.02);
+.sidebar.active{
 
-    }
+  left:0;
 
-    .box h2{
+}
 
-      font-size:35px;
-      margin-bottom:20px;
 
-      color:#ff4444;
 
-    }
 
-    .box p{
 
-      font-size:20px;
-      margin-bottom:25px;
 
-    }
+.title{
 
-    .download-btn{
+  text-align:center;
 
-      display:inline-block;
+  margin-bottom:40px;
 
-      padding:15px 35px;
+}
 
-      border-radius:15px;
+.title h1{
 
-      background:red;
+  font-size:60px;
 
-      color:white;
+  text-shadow:0 0 20px red;
 
-      text-decoration:none;
+}
 
-      font-size:20px;
-      font-weight:bold;
 
-      box-shadow:0 0 20px red;
 
-      transition:0.3s;
 
-    }
 
-    .download-btn:hover{
 
-      transform:scale(1.08);
 
-      background:#ff2222;
+.search-box{
 
-    }
+  width:90%;
+  max-width:700px;
 
-    footer{
+  margin:auto;
 
-      text-align:center;
+  margin-bottom:40px;
 
-      padding-top:80px;
-      padding-bottom:20px;
+}
 
-      font-size:18px;
+.search-box input{
 
-      opacity:0.8;
+  width:100%;
 
-    }
+  padding:18px;
 
-  </style>
+  border:2px solid red;
+
+  border-radius:20px;
+
+  background:black;
+
+  color:white;
+
+  font-size:18px;
+
+  outline:none;
+
+  box-shadow:0 0 20px red;
+
+}
+
+
+
+
+
+
+
+.box{
+
+  width:90%;
+  max-width:700px;
+
+  margin:auto;
+
+  margin-bottom:40px;
+
+  background:rgba(20,20,20,0.8);
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:0 0 20px red;
+
+}
+
+.box h2{
+
+  font-size:35px;
+
+  margin-bottom:20px;
+
+  color:#ff4444;
+
+}
+
+.box p{
+
+  font-size:20px;
+
+  margin-bottom:25px;
+
+}
+
+
+
+
+
+
+
+.btn{
+
+  display:inline-block;
+
+  padding:15px 35px;
+
+  border-radius:15px;
+
+  background:red;
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  box-shadow:0 0 20px red;
+
+}
+
+
+
+
+
+
+
+footer{
+
+  text-align:center;
+
+  margin-top:100px;
+
+  padding-bottom:20px;
+
+  opacity:0.8;
+
+}
+
+
+
+
+
+
+
+#shopPage{
+
+  display:none;
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="overlay">
-
-    <div class="title">
-
-      <h1>Hutao Team</h1>
-
-    </div>
-
-
-
-
-    <div class="search-box">
-
-      <input type="text"
-      id="searchInput"
-      placeholder="Tìm kiếm mục...">
-
-    </div>
 
 
 
 
 
-    <div class="container" id="container">
+<div class="sidebar" id="sidebar">
 
+  <a href="#" onclick="showMain()">Main</a>
 
+  <a href="#" onclick="showShop()">Shop</a>
 
-
-      <div class="box">
-
-        <h2># Cài Đặt Roblox</h2>
-
-        <p>
-          Delta x VNG new !!
-        </p>
-
-        <a class="download-btn"
-        href="https://www.mediafire.com/"
-        target="_blank">
-
-        Tải Tệp APK
-
-        </a>
-
-      </div>
+</div>
 
 
 
 
 
 
-    </div>
+<div class="overlay">
+
+<div class="menu-btn"
+onclick="toggleMenu()">
+
+☰
+
+</div>
 
 
 
 
 
-    <footer>
 
-      trang web này được tạo bởi @slkgamingssr
+<div class="title">
 
-    </footer>
+  <h1>Hutao Team</h1>
 
-  </div>
+</div>
+
+
+
+
+
+
+<div id="mainPage">
+
+
+
+
+
+<div class="search-box">
+
+<input type="text"
+id="mainSearch"
+placeholder="Tìm mục bên Main..."
+onkeyup="searchMain()">
+
+</div>
+
+
+
+
+
+
+<div class="box mainBox">
+
+<h2># Cài Đặt Roblox</h2>
+
+<p>
+Delta x VNG new !!
+</p>
+
+<a class="btn"
+href="https://www.mediafire.com/"
+target="_blank">
+
+Tải Tệp APK
+
+</a>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="shopPage">
+
+
+
+
+
+<div class="search-box">
+
+<input type="text"
+id="shopSearch"
+placeholder="Tìm mục bên Shop..."
+onkeyup="searchShop()">
+
+</div>
+
+
+
+
+
+
+<div class="box shopBox">
+
+<h2># mua script premium</h2>
+
+<p>
+script forsaken premium :
+</p>
+
+<a class="btn"
+href="qr.png"
+target="_blank">
+
+Mua
+
+</a>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+trang web này được tạo bởi @slkgamingssr
+
+</footer>
+
+</div>
+
+
+
 
 
 
@@ -252,31 +431,102 @@
 
 <script>
 
-const searchInput = document.getElementById("searchInput");
+function toggleMenu(){
 
-searchInput.addEventListener("keyup", function(){
+  document.getElementById("sidebar")
+  .classList.toggle("active");
 
-  let filter = searchInput.value.toLowerCase();
+}
 
-  let boxes = document.getElementsByClassName("box");
 
-  for(let i = 0; i < boxes.length; i++){
 
-    let text = boxes[i].innerText.toLowerCase();
 
-    if(text.includes(filter)){
 
-      boxes[i].style.display = "";
 
-    }else{
 
-      boxes[i].style.display = "none";
+function showMain(){
 
-    }
+  document.getElementById("mainPage")
+  .style.display="block";
 
-  }
+  document.getElementById("shopPage")
+  .style.display="none";
 
-});
+}
+
+
+
+
+
+
+
+function showShop(){
+
+  document.getElementById("mainPage")
+  .style.display="none";
+
+  document.getElementById("shopPage")
+  .style.display="block";
+
+}
+
+
+
+
+
+
+
+function searchMain(){
+
+let input =
+document.getElementById("mainSearch")
+.value.toLowerCase();
+
+let boxes =
+document.getElementsByClassName("mainBox");
+
+for(let i=0;i<boxes.length;i++){
+
+let text =
+boxes[i].innerText.toLowerCase();
+
+boxes[i].style.display =
+text.includes(input)
+? ""
+: "none";
+
+}
+
+}
+
+
+
+
+
+
+
+function searchShop(){
+
+let input =
+document.getElementById("shopSearch")
+.value.toLowerCase();
+
+let boxes =
+document.getElementsByClassName("shopBox");
+
+for(let i=0;i<boxes.length;i++){
+
+let text =
+boxes[i].innerText.toLowerCase();
+
+boxes[i].style.display =
+text.includes(input)
+? ""
+: "none";
+
+}
+
+}
 
 </script>
 
