@@ -558,7 +558,7 @@ Updated Daily
 </div>  
   
 <div class="more-btn">  
-<button onclick="toggleMore('apk')">Xem thêm</button>  
+<button onclick="toggleMore('apk')">Show more </button>  
 </div>  
   
 </div>  
@@ -602,7 +602,7 @@ Updated Daily
 </div>  
   
 <div class="more-btn">  
-<button onclick="toggleMore('script')">Xem thêm</button>  
+<button onclick="toggleMore('script')">Show more </button>  
 </div>  
   
 </div>  
@@ -662,11 +662,11 @@ function toggleMore(type){
   if(!expanded){  
     items.forEach(el => el.classList.remove('hidden'));  
     section.dataset.expanded = "1";  
-    btn.textContent = "Ẩn bớt";  
+    btn.textContent = "Hide less";  
   } else {  
     items.forEach(el => el.classList.add('hidden'));  
     section.dataset.expanded = "0";  
-    btn.textContent = "Xem thêm";  
+    btn.textContent = "Show more ";  
   }  
 }  
 </script>  
