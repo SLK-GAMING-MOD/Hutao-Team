@@ -96,28 +96,6 @@ margin-bottom:30px;
 
 }
 
-.sidebar a{
-
-  display:block;
-
-  padding:20px;
-
-  color:white;
-
-  text-decoration:none;
-
-  font-size:22px;
-
-  border-bottom:1px solid #333;
-
-}
-
-.sidebar a:hover{
-
-  background:red;
-
-}
-
 .sidebar.active{
 
   left:0;
@@ -169,31 +147,97 @@ cursor:pointer;
 
 
 
-.search-box{
+.search-container{
 
-  width:250px;
+display:flex;
+
+align-items:center;
+
+justify-content:flex-end;
+
+gap:10px;
 
 }
 
+
+
+
+
+
+.search-btn{
+
+width:55px;
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:black;
+
+color:white;
+
+font-size:25px;
+
+cursor:pointer;
+
+box-shadow:0 0 20px red;
+
+transition:0.3s;
+
+}
+
+.search-btn:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+
+
+
+.search-box{
+
+width:0;
+
+overflow:hidden;
+
+transition:0.4s;
+
+}
+
+.search-box.active{
+
+width:250px;
+
+}
+
+
+
+
+
+
 .search-box input{
 
-  width:100%;
+width:100%;
 
-  padding:15px;
+padding:15px;
 
-  border:2px solid red;
+border:2px solid red;
 
-  border-radius:20px;
+border-radius:20px;
 
-  background:black;
+background:black;
 
-  color:white;
+color:white;
 
-  font-size:16px;
+font-size:16px;
 
-  outline:none;
+outline:none;
 
-  box-shadow:0 0 20px red;
+box-shadow:0 0 20px red;
 
 }
 
@@ -292,148 +336,6 @@ footer{
 
 }
 
-
-
-
-
-
-
-#shopPage{
-
-  display:none;
-
-}
-
-
-
-
-
-
-
-#qrGui{
-
-display:none;
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.8);
-
-justify-content:center;
-align-items:center;
-
-z-index:2000;
-
-}
-
-
-
-
-
-
-
-#qrBox{
-
-background:#111;
-
-padding:30px;
-
-border-radius:25px;
-
-text-align:center;
-
-width:90%;
-max-width:400px;
-
-box-shadow:0 0 25px red;
-
-position:relative;
-
-}
-
-
-
-
-
-
-
-#closeQR{
-
-position:absolute;
-
-top:15px;
-right:20px;
-
-font-size:30px;
-
-cursor:pointer;
-
-}
-
-
-
-
-
-
-
-#qrImage{
-
-width:100%;
-
-border-radius:15px;
-
-margin-top:20px;
-margin-bottom:20px;
-
-}
-
-
-
-
-
-
-
-#confirmBtn{
-
-padding:15px 25px;
-
-border:none;
-
-border-radius:15px;
-
-background:red;
-
-color:white;
-
-font-size:18px;
-
-box-shadow:0 0 15px red;
-
-cursor:pointer;
-
-}
-
-
-
-
-
-
-
-#confirmText{
-
-margin-top:20px;
-
-font-size:18px;
-
-color:#00ff66;
-
-}
-
 </style>
 </head>
 
@@ -457,10 +359,6 @@ onclick="toggleMenu()">
 ✕
 
 </div>
-
-  <a href="#" onclick="showMain()">Main</a>
-
-  <a href="#" onclick="showShop()">Shop</a>
 
 </div>
 
@@ -490,12 +388,24 @@ onclick="toggleMenu()">
 
 
 
-<div class="search-box">
+<div class="search-container">
+
+<button class="search-btn"
+onclick="toggleSearch()">
+
+🔍
+
+</button>
+
+<div class="search-box"
+id="searchBox">
 
 <input type="text"
 id="mainSearch"
 placeholder="Tìm kiếm..."
 onkeyup="globalSearch()">
+
+</div>
 
 </div>
 
@@ -555,84 +465,6 @@ Tải Tệp APK
 
 
 
-
-
-<div id="shopPage">
-
-
-
-
-
-
-<div class="box shopBox">
-
-<h2># mua script premium</h2>
-
-<p>
-script forsaken premium :
-</p>
-
-<button class="btn"
-onclick="openQR()">
-
-Mua Với Giá 100K
-
-</button>
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div id="qrGui">
-
-<div id="qrBox">
-
-<div id="closeQR"
-onclick="closeQR()">
-
-✕
-
-</div>
-
-<h2>
-
-hãy thanh toán đơn hàng này
-
-</h2>
-
-<img src="qr.png"
-id="qrImage">
-
-<button id="confirmBtn"
-onclick="confirmPayment()">
-
-Xác Nhận Thanh Toán
-
-</button>
-
-<p id="confirmText"></p>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
 <footer>
 
 trang web này được tạo bởi @slkgamingssr
@@ -664,29 +496,10 @@ function toggleMenu(){
 
 
 
-function showMain(){
+function toggleSearch(){
 
-  document.getElementById("mainPage")
-  .style.display="block";
-
-  document.getElementById("shopPage")
-  .style.display="none";
-
-}
-
-
-
-
-
-
-
-function showShop(){
-
-  document.getElementById("mainPage")
-  .style.display="none";
-
-  document.getElementById("shopPage")
-  .style.display="block";
+document.getElementById("searchBox")
+.classList.toggle("active");
 
 }
 
@@ -702,11 +515,6 @@ let input =
 document.getElementById("mainSearch")
 .value.toLowerCase();
 
-if(
-document.getElementById("mainPage")
-.style.display != "none"
-){
-
 let boxes =
 document.getElementsByClassName("mainBox");
 
@@ -719,25 +527,6 @@ boxes[i].style.display =
 text.includes(input)
 ? ""
 : "none";
-
-}
-
-}else{
-
-let boxes =
-document.getElementsByClassName("shopBox");
-
-for(let i=0;i<boxes.length;i++){
-
-let text =
-boxes[i].innerText.toLowerCase();
-
-boxes[i].style.display =
-text.includes(input)
-? ""
-: "none";
-
-}
 
 }
 
@@ -766,46 +555,6 @@ if(
 sidebar.classList.remove("active");
 
 }
-
-}
-
-
-
-
-
-
-
-function openQR(){
-
-document.getElementById("qrGui")
-.style.display="flex";
-
-}
-
-
-
-
-
-
-
-function closeQR(){
-
-document.getElementById("qrGui")
-.style.display="none";
-
-}
-
-
-
-
-
-
-
-function confirmPayment(){
-
-document.getElementById("confirmText")
-.innerHTML =
-"đơn hàng của bạn sẽ được xử lí sau 24h";
 
 }
 
