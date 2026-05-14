@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Web của tôi</title>
+  <title>SLK GAMING</title>
 
   <style>
     body{
-      background:#0f0f0f;
+      margin:0;
+      padding:0;
+
+      background-image:url("Background.png");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+
       color:white;
       text-align:center;
       font-family:sans-serif;
-      padding-top:100px;
+
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+
+      backdrop-filter:brightness(0.7);
     }
 
     h1{
-      font-size:40px;
+      font-size:50px;
+      text-shadow:0 0 15px red;
+      margin-bottom:10px;
+    }
+
+    p{
+      font-size:20px;
+      margin-bottom:30px;
+      text-shadow:0 0 10px black;
     }
 
     button{
-      padding:15px 25px;
+      padding:15px 35px;
       border:none;
       border-radius:15px;
+
       background:red;
       color:white;
-      font-size:18px;
+
+      font-size:20px;
+      font-weight:bold;
+
+      box-shadow:0 0 20px red;
+
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.1);
+      background:#ff2222;
     }
   </style>
 </head>
 
 <body>
+
   <h1>SLK GAMING</h1>
-  <p>Chào mừng đến web của tôi</p>
+
+  <p>
+    chào mừng bạn quay lại với web của tui >.<
+  </p>
 
   <button>Tải APK</button>
+
 </body>
 </html>
