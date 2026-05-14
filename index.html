@@ -59,15 +59,60 @@ margin-bottom:30px;
 
 
 
+.menu-wrapper{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+
+
+
+
 .menu-btn{
 
-  font-size:35px;
+width:55px;
+height:55px;
 
-  cursor:pointer;
+border:none;
 
-  width:60px;
+border-radius:15px;
 
-  text-align:center;
+background:black;
+
+cursor:pointer;
+
+box-shadow:0 0 20px red;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:0.3s;
+
+}
+
+.menu-btn:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+
+
+
+.menu-btn img{
+
+width:28px;
 
 }
 
@@ -78,27 +123,29 @@ margin-bottom:30px;
 
 .sidebar{
 
-  position:fixed;
+position:fixed;
 
-  top:0;
-  left:-250px;
+top:0;
+left:-260px;
 
-  width:250px;
-  height:100%;
+width:260px;
+height:100%;
 
-  background:#111;
+background:#111;
 
-  padding-top:80px;
+padding-top:80px;
 
-  transition:0.3s;
+transition:0.4s;
 
-  z-index:999;
+z-index:999;
+
+box-shadow:0 0 25px red;
 
 }
 
 .sidebar.active{
 
-  left:0;
+left:0;
 
 }
 
@@ -125,19 +172,34 @@ cursor:pointer;
 
 
 
+.sidebar-content{
+
+padding:20px;
+
+font-size:22px;
+
+color:white;
+
+}
+
+
+
+
+
+
 .title{
 
-  text-align:center;
+text-align:center;
 
-  margin-bottom:40px;
+margin-bottom:40px;
 
 }
 
 .title h1{
 
-  font-size:60px;
+font-size:60px;
 
-  text-shadow:0 0 20px red;
+text-shadow:0 0 20px red;
 
 }
 
@@ -155,7 +217,7 @@ align-items:center;
 
 justify-content:flex-end;
 
-gap:10px;
+position:relative;
 
 }
 
@@ -171,25 +233,40 @@ height:55px;
 
 border:none;
 
-border-radius:50%;
+border-radius:15px;
 
 background:black;
-
-color:white;
-
-font-size:25px;
 
 cursor:pointer;
 
 box-shadow:0 0 20px red;
 
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
 transition:0.3s;
+
+z-index:2;
 
 }
 
 .search-btn:hover{
 
-transform:scale(1.1);
+transform:scale(1.08);
+
+}
+
+
+
+
+
+
+.search-btn img{
+
+width:28px;
 
 }
 
@@ -200,17 +277,21 @@ transform:scale(1.1);
 
 .search-box{
 
-width:0;
+position:absolute;
 
-overflow:hidden;
+right:0;
+
+width:55px;
 
 transition:0.4s;
+
+overflow:hidden;
 
 }
 
 .search-box.active{
 
-width:250px;
+width:260px;
 
 }
 
@@ -223,11 +304,14 @@ width:250px;
 
 width:100%;
 
-padding:15px;
+height:55px;
 
-border:2px solid red;
+padding-left:20px;
+padding-right:65px;
 
-border-radius:20px;
+border:none;
+
+border-radius:15px;
 
 background:black;
 
@@ -249,38 +333,38 @@ box-shadow:0 0 20px red;
 
 .box{
 
-  width:90%;
-  max-width:700px;
+width:90%;
+max-width:700px;
 
-  margin:auto;
+margin:auto;
 
-  margin-bottom:40px;
+margin-bottom:40px;
 
-  background:rgba(20,20,20,0.8);
+background:rgba(20,20,20,0.8);
 
-  padding:30px;
+padding:30px;
 
-  border-radius:25px;
+border-radius:25px;
 
-  box-shadow:0 0 20px red;
+box-shadow:0 0 20px red;
 
 }
 
 .box h2{
 
-  font-size:35px;
+font-size:35px;
 
-  margin-bottom:20px;
+margin-bottom:20px;
 
-  color:#ff4444;
+color:#ff4444;
 
 }
 
 .box p{
 
-  font-size:20px;
+font-size:20px;
 
-  margin-bottom:25px;
+margin-bottom:25px;
 
 }
 
@@ -292,27 +376,27 @@ box-shadow:0 0 20px red;
 
 .btn{
 
-  display:inline-block;
+display:inline-block;
 
-  padding:15px 35px;
+padding:15px 35px;
 
-  border:none;
+border:none;
 
-  border-radius:15px;
+border-radius:15px;
 
-  background:red;
+background:red;
 
-  color:white;
+color:white;
 
-  text-decoration:none;
+text-decoration:none;
 
-  font-size:20px;
+font-size:20px;
 
-  font-weight:bold;
+font-weight:bold;
 
-  box-shadow:0 0 20px red;
+box-shadow:0 0 20px red;
 
-  cursor:pointer;
+cursor:pointer;
 
 }
 
@@ -324,15 +408,15 @@ box-shadow:0 0 20px red;
 
 footer{
 
-  text-align:center;
+text-align:center;
 
-  margin-top:auto;
+margin-top:auto;
 
-  padding-top:100px;
+padding-top:100px;
 
-  padding-bottom:20px;
+padding-bottom:20px;
 
-  opacity:0.8;
+opacity:0.8;
 
 }
 
@@ -360,6 +444,12 @@ onclick="toggleMenu()">
 
 </div>
 
+<div class="sidebar-content">
+
+Menu
+
+</div>
+
 </div>
 
 
@@ -376,10 +466,17 @@ onclick="toggleMenu()">
 
 <div class="topBar">
 
-<div class="menu-btn"
+
+
+
+<div class="menu-wrapper">
+
+<button class="menu-btn"
 onclick="toggleMenu()">
 
-☰
+<img src="menu.png">
+
+</button>
 
 </div>
 
@@ -390,13 +487,6 @@ onclick="toggleMenu()">
 
 <div class="search-container">
 
-<button class="search-btn"
-onclick="toggleSearch()">
-
-🔍
-
-</button>
-
 <div class="search-box"
 id="searchBox">
 
@@ -406,6 +496,13 @@ placeholder="Tìm kiếm..."
 onkeyup="globalSearch()">
 
 </div>
+
+<button class="search-btn"
+onclick="toggleSearch()">
+
+<img src="timkiem.png">
+
+</button>
 
 </div>
 
@@ -418,7 +515,7 @@ onkeyup="globalSearch()">
 
 <div class="title">
 
-  <h1>Hutao Team</h1>
+<h1>Hutao Team</h1>
 
 </div>
 
@@ -428,11 +525,6 @@ onkeyup="globalSearch()">
 
 
 <div id="mainPage">
-
-
-
-
-
 
 <div class="box mainBox">
 
@@ -451,11 +543,6 @@ Tải Tệp APK
 </a>
 
 </div>
-
-
-
-
-
 
 </div>
 
@@ -485,8 +572,8 @@ trang web này được tạo bởi @slkgamingssr
 
 function toggleMenu(){
 
-  document.getElementById("sidebar")
-  .classList.toggle("active");
+document.getElementById("sidebar")
+.classList.toggle("active");
 
 }
 
