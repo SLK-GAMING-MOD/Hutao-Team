@@ -31,6 +31,10 @@ body{
 
   padding:20px;
 
+  display:flex;
+
+  flex-direction:column;
+
 }
 
 
@@ -38,24 +42,15 @@ body{
 
 
 
-#onlineBox{
+.topBar{
 
-position:fixed;
+display:flex;
 
-top:20px;
-right:20px;
+justify-content:space-between;
 
-background:rgba(0,0,0,0.7);
+align-items:center;
 
-padding:12px 18px;
-
-border-radius:15px;
-
-box-shadow:0 0 15px red;
-
-font-size:18px;
-
-z-index:999;
+margin-bottom:30px;
 
 }
 
@@ -73,8 +68,6 @@ z-index:999;
   width:60px;
 
   text-align:center;
-
-  margin-bottom:20px;
 
 }
 
@@ -178,12 +171,7 @@ cursor:pointer;
 
 .search-box{
 
-  width:90%;
-  max-width:700px;
-
-  margin:auto;
-
-  margin-bottom:40px;
+  width:250px;
 
 }
 
@@ -191,7 +179,7 @@ cursor:pointer;
 
   width:100%;
 
-  padding:18px;
+  padding:15px;
 
   border:2px solid red;
 
@@ -201,7 +189,7 @@ cursor:pointer;
 
   color:white;
 
-  font-size:18px;
+  font-size:16px;
 
   outline:none;
 
@@ -294,7 +282,9 @@ footer{
 
   text-align:center;
 
-  margin-top:100px;
+  margin-top:auto;
+
+  padding-top:100px;
 
   padding-bottom:20px;
 
@@ -486,10 +476,12 @@ onclick="toggleMenu()">
 
 
 
-<div id="onlineBox">
+<div class="topBar">
 
-🟢 Online:
-<span id="onlineCount"></span>
+<div class="menu-btn"
+onclick="toggleMenu()">
+
+☰
 
 </div>
 
@@ -498,10 +490,14 @@ onclick="toggleMenu()">
 
 
 
-<div class="menu-btn"
-onclick="toggleMenu()">
+<div class="search-box">
 
-☰
+<input type="text"
+id="mainSearch"
+placeholder="Tìm kiếm..."
+onkeyup="globalSearch()">
+
+</div>
 
 </div>
 
@@ -522,19 +518,6 @@ onclick="toggleMenu()">
 
 
 <div id="mainPage">
-
-
-
-
-
-<div class="search-box">
-
-<input type="text"
-id="mainSearch"
-placeholder="Tìm mục bên Main..."
-onkeyup="searchMain()">
-
-</div>
 
 
 
@@ -575,19 +558,6 @@ Tải Tệp APK
 
 
 <div id="shopPage">
-
-
-
-
-
-<div class="search-box">
-
-<input type="text"
-id="shopSearch"
-placeholder="Tìm mục bên Shop..."
-onkeyup="searchShop()">
-
-</div>
 
 
 
@@ -726,11 +696,16 @@ function showShop(){
 
 
 
-function searchMain(){
+function globalSearch(){
 
 let input =
 document.getElementById("mainSearch")
 .value.toLowerCase();
+
+if(
+document.getElementById("mainPage")
+.style.display != "none"
+){
 
 let boxes =
 document.getElementsByClassName("mainBox");
@@ -747,19 +722,7 @@ text.includes(input)
 
 }
 
-}
-
-
-
-
-
-
-
-function searchShop(){
-
-let input =
-document.getElementById("shopSearch")
-.value.toLowerCase();
+}else{
 
 let boxes =
 document.getElementsByClassName("shopBox");
@@ -773,6 +736,8 @@ boxes[i].style.display =
 text.includes(input)
 ? ""
 : "none";
+
+}
 
 }
 
@@ -843,17 +808,6 @@ document.getElementById("confirmText")
 "đơn hàng của bạn sẽ được xử lí sau 24h";
 
 }
-
-
-
-
-
-
-
-document.getElementById("onlineCount")
-.innerHTML = Math.floor(
-Math.random() * 101
-) + 100;
 
 </script>
 
