@@ -3,49 +3,49 @@
 <head>  
 <meta charset="UTF-8"/>  
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-
+  
 <title>Hutao Team</title>  
-
+  
 <link rel="preconnect" href="https://fonts.googleapis.com">  
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-
+  
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">  
-
+  
 <style>  
-
+  
 :root{  
   --bg:#070B12;  
   --bg2:#0E131D;  
   --card:#111826;  
   --border:#1B2535;  
-
+  
   --text:#F2F5FF;  
   --text2:#9AA4B5;  
-
+  
   --cyan:#00E5FF;  
   --blue:#4F7CFF;  
   --purple:#8B5CFF;  
-
+  
   --glow: 0 0 30px rgba(0,229,255,.25);  
 }  
-
+  
 *{  
   margin:0;  
   padding:0;  
   box-sizing:border-box;  
 }  
-
+  
 html{  
   scroll-behavior:smooth;  
 }  
-
+  
 body{  
   background:var(--bg);  
   color:var(--text);  
   font-family:'Space Grotesk',sans-serif;  
   overflow-x:hidden;  
 }  
-
+  
 .bg-blur{  
   position:fixed;  
   width:600px;  
@@ -55,10 +55,10 @@ body{
   z-index:-1;  
   opacity:.22;  
 }  
-
+  
 .bg1{ background:var(--cyan); top:-200px; left:-150px; }  
 .bg2{ background:var(--purple); right:-180px; top:120px; }  
-
+  
 nav{  
   position:sticky;  
   top:0;  
@@ -71,14 +71,14 @@ nav{
   background:rgba(7,11,18,.72);  
   border-bottom:1px solid rgba(255,255,255,.05);  
 }  
-
+  
 .logo-wrap{  
   display:flex;  
   align-items:center;  
   gap:18px;  
-  transform:translateX(-28px);  
+  margin-left:-12px;  
 }  
-
+  
 .logo-icon{  
   width:44px;  
   height:44px;  
@@ -91,13 +91,13 @@ nav{
   border:1px solid rgba(255,255,255,.08);  
   box-shadow:var(--glow);  
 }  
-
+  
 .logo-icon img{  
   width:100%;  
   height:100%;  
   object-fit:cover;  
 }  
-
+  
 .logo{  
   font-size:25px;  
   font-weight:700;  
@@ -106,21 +106,21 @@ nav{
   -webkit-background-clip:text;  
   -webkit-text-fill-color:transparent;  
 }  
-
+  
 .nav-links{  
   display:flex;  
   gap:28px;  
 }  
-
+  
 .nav-links a{  
   color:var(--text2);  
   text-decoration:none;  
   transition:.3s;  
   font-size:15px;  
 }  
-
+  
 .nav-links a:hover{ color:var(--cyan); }  
-
+  
 .hero{  
   min-height:82vh;  
   display:flex;  
@@ -129,9 +129,9 @@ nav{
   text-align:center;  
   padding:40px 7% 0;  
 }  
-
+  
 .hero-content{ max-width:920px; }  
-
+  
 .badge{  
   display:inline-flex;  
   align-items:center;  
@@ -143,7 +143,7 @@ nav{
   color:var(--cyan);  
   margin-bottom:22px;  
 }  
-
+  
 .badge-dot{  
   width:8px;  
   height:8px;  
@@ -151,19 +151,19 @@ nav{
   background:var(--cyan);  
   box-shadow:0 0 12px var(--cyan);  
 }  
-
+  
 .hero h1{  
   font-size:82px;  
   line-height:1;  
   margin-bottom:18px;  
 }  
-
+  
 .hero h1 span{  
   background:linear-gradient(90deg,var(--cyan),var(--purple));  
   -webkit-background-clip:text;  
   -webkit-text-fill-color:transparent;  
 }  
-
+  
 .hero p{  
   max-width:720px;  
   margin:auto;  
@@ -171,7 +171,7 @@ nav{
   font-size:20px;  
   line-height:1.7;  
 }  
-
+  
 .hero-buttons{  
   margin-top:30px;  
   display:flex;  
@@ -179,14 +179,14 @@ nav{
   gap:18px;  
   flex-wrap:wrap;  
 }  
-
+  
 .btn,  
 .download-btn{  
   position:relative;  
   z-index:5;  
   pointer-events:auto;  
 }  
-
+  
 .btn{  
   padding:16px 28px;  
   border-radius:16px;  
@@ -194,26 +194,26 @@ nav{
   font-weight:600;  
   transition:.35s;  
 }  
-
+  
 .btn-primary{  
   background:linear-gradient(90deg,var(--cyan),var(--blue));  
   color:#000;  
   box-shadow:var(--glow);  
 }  
-
+  
 .btn-primary:hover{ transform:translateY(-4px); }  
-
+  
 .btn-outline{  
   border:1px solid rgba(255,255,255,.1);  
   color:var(--text);  
   background:rgba(255,255,255,.03);  
 }  
-
+  
 .btn-outline:hover{  
   border-color:var(--cyan);  
   color:var(--cyan);  
 }  
-
+  
 .stats{  
   margin-top:55px;  
   display:flex;  
@@ -221,7 +221,7 @@ nav{
   gap:18px;  
   flex-wrap:wrap;  
 }  
-
+  
 .stat-box{  
   min-width:180px;  
   padding:22px;  
@@ -229,49 +229,49 @@ nav{
   background:rgba(255,255,255,.03);  
   border:1px solid rgba(255,255,255,.05);  
 }  
-
+  
 .stat-box h3{  
   font-size:34px;  
   background:linear-gradient(90deg,var(--cyan),var(--purple));  
   -webkit-background-clip:text;  
   -webkit-text-fill-color:transparent;  
 }  
-
+  
 .stat-box p{  
   color:var(--text2);  
   margin-top:8px;  
   font-size:14px;  
 }  
-
+  
 .section{ padding:75px 7%; }  
-
+  
 .section-top{  
   text-align:center;  
   margin-bottom:45px;  
 }  
-
+  
 .section-top span{  
   color:var(--cyan);  
   font-size:13px;  
   letter-spacing:2px;  
 }  
-
+  
 .section-top h2{  
   font-size:52px;  
   margin-top:14px;  
 }  
-
+  
 .section-top p{  
   color:var(--text2);  
   margin-top:12px;  
 }  
-
+  
 .grid{  
   display:grid;  
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));  
   gap:24px;  
 }  
-
+  
 .card{  
   position:relative;  
   overflow:hidden;  
@@ -281,7 +281,7 @@ nav{
   padding:28px;  
   transition:.35s;  
 }  
-
+  
 .card::before{  
   content:"";  
   position:absolute;  
@@ -291,14 +291,14 @@ nav{
   transition:.35s;  
   pointer-events:none;  
 }  
-
+  
 .card:hover::before{ opacity:1; }  
-
+  
 .card:hover{  
   transform:translateY(-8px);  
   border-color:rgba(0,229,255,.18);  
 }  
-
+  
 .card-icon{  
   width:60px;  
   height:60px;  
@@ -310,14 +310,14 @@ nav{
   font-size:28px;  
   margin-bottom:22px;  
 }  
-
+  
 .card h3{ font-size:24px; margin-bottom:12px; }  
-
+  
 .card p{  
   color:var(--text2);  
   line-height:1.7;  
 }  
-
+  
 .download-card{  
   overflow:hidden;  
   border-radius:28px;  
@@ -325,12 +325,12 @@ nav{
   background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));  
   transition:.35s;  
 }  
-
+  
 .download-card:hover{  
   transform:translateY(-8px);  
   border-color:rgba(0,229,255,.2);  
 }  
-
+  
 .download-image{  
   height:180px;  
   display:flex;  
@@ -339,17 +339,17 @@ nav{
   font-size:60px;  
   background:linear-gradient(135deg,rgba(0,229,255,.16),rgba(139,92,255,.18));  
 }  
-
+  
 .download-content{ padding:24px; }  
-
+  
 .download-content h3{ margin-bottom:10px; font-size:24px; }  
-
+  
 .download-content p{  
   color:var(--text2);  
   line-height:1.7;  
   margin-bottom:22px;  
 }  
-
+  
 .download-btn{  
   display:inline-block;  
   padding:14px 22px;  
@@ -360,29 +360,29 @@ nav{
   border:1px solid rgba(0,229,255,.22);  
   transition:.3s;  
 }  
-
+  
 .download-btn:hover{  
   background:var(--cyan);  
   color:#000;  
 }  
-
+  
 .community-card{  
   text-align:center;  
   padding:55px 30px;  
 }  
-
+  
 .community-card h2{  
   font-size:52px;  
   margin-bottom:18px;  
 }  
-
+  
 .community-card p{  
   max-width:700px;  
   margin:auto;  
   color:var(--text2);  
   line-height:1.8;  
 }  
-
+  
 footer{  
   padding:32px 7%;  
   border-top:1px solid rgba(255,255,255,.05);  
@@ -392,22 +392,22 @@ footer{
   flex-wrap:wrap;  
   gap:20px;  
 }  
-
+  
 footer p{ color:var(--text2); }  
-
+  
 .footer-links{  
   display:flex;  
   gap:18px;  
 }  
-
+  
 .footer-links a{  
   color:var(--text2);  
   text-decoration:none;  
   transition:.3s;  
 }  
-
+  
 .footer-links a:hover{ color:var(--cyan); }  
-
+  
 @media(max-width:900px){  
   .hero{ min-height:auto; padding-top:70px; }  
   .hero h1{ font-size:56px; }  
@@ -417,15 +417,15 @@ footer p{ color:var(--text2); }
   .stats{ gap:12px; }  
   .stat-box{ width:100%; }  
 }  
-
+  
 </style>  
 </head>  
-
+  
 <body>  
-
+  
 <div class="bg-blur bg1"></div>  
 <div class="bg-blur bg2"></div>  
-
+  
 <nav>  
 <div class="logo-wrap">  
 <div class="logo-icon">  
@@ -433,7 +433,7 @@ footer p{ color:var(--text2); }
 </div>  
 <div class="logo">Hutao Team</div>  
 </div>  
-
+  
 <div class="nav-links">  
 <a href="#">Home</a>  
 <a href="#">APK</a>  
@@ -442,87 +442,87 @@ footer p{ color:var(--text2); }
 <a href="#">Community</a>  
 </div>  
 </nav>  
-
+  
 <section class="hero" id="top">  
 <div class="hero-content">  
-
+  
 <div class="badge">  
 <div class="badge-dot"></div>  
 Updated Daily  
 </div>  
-
+  
 <h1>APK Files<br>& <span>Game Scripts</span></h1>  
-
+  
 <p>  
 Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tools inside one futuristic platform.  
 </p>  
-
+  
 <div class="hero-buttons">  
 <a href="#why" class="btn btn-primary">Explore Now</a>  
 <a href="#community" class="btn btn-outline">Join Community</a>  
 </div>  
-
+  
 <div class="stats">  
-
+  
 <div class="stat-box">  
 <h3>500+</h3>  
 <p>Uploads Available</p>  
 </div>  
-
+  
 <div class="stat-box">  
 <h3>14/5 - 21:55</h3>  
 <p>Recently Updated</p>  
 </div>  
-
+  
 <div class="stat-box">  
 <h3>50.000+</h3>  
 <p>Community Users</p>  
 </div>  
-
+  
 </div>  
-
+  
 </div>  
 </section>  
-
+  
 <section class="section" id="why">  
 <div class="section-top">  
 <span>WHY HUTAO TEAM</span>  
 <h2>Everything You Need</h2>  
 <p>Fast downloads, clean UI, safe files and daily updates.</p>  
 </div>  
-
+  
 <div class="grid">  
-
+  
 <div class="card">  
 <div class="card-icon">⚡</div>  
 <h3>Fast Downloads</h3>  
 <p>Direct high-speed APK and script downloads with no annoying redirects.</p>  
 </div>  
-
+  
 <div class="card">  
 <div class="card-icon">🛡️</div>  
 <h3>Safe Files</h3>  
 <p>Every upload is checked before being published on the platform.</p>  
 </div>  
-
+  
 <div class="card">  
 <div class="card-icon">🔥</div>  
 <h3>Daily Updates</h3>  
 <p>New executors, Roblox scripts and mods added every day.</p>  
 </div>  
-
+  
 </div>  
 </section>  
-
+  
 <section class="section">  
 <div class="section-top">  
 <span>ALL FILE APK</span>  
 <h2>Popular Downloads</h2>  
 <p>Most downloaded APKs and scripts this week.</p>  
 </div>  
-
+  
 <div class="grid">  
-
+  
 <div class="download-card">  
 <div class="download-image">🎮</div>  
 <div class="download-content">  
@@ -531,7 +531,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 <a href="#" class="download-btn">Download APK</a>  
 </div>  
 </div>  
-
+  
 <div class="download-card">  
 <div class="download-image">💻</div>  
 <div class="download-content">  
@@ -540,7 +540,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 <a href="#" class="download-btn">Copy Script</a>  
 </div>  
 </div>  
-
+  
 <div class="download-card">  
 <div class="download-image">🚀</div>  
 <div class="download-content">  
@@ -549,53 +549,53 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 <a href="#" class="download-btn">Download Tool</a>  
 </div>  
 </div>  
-
+  
 </div>  
 </section>  
-
+  
 <section class="section" id="community">  
-
+  
 <div class="card community-card">  
-
+  
 <h2>Join The Community</h2>  
-
+  
 <p>  
 Get updates about new APKs, Roblox scripts, Minecraft mods and upcoming releases.  
 </p>  
-
+  
 <div class="hero-buttons">  
-
+  
 <a href="https://discord.gg/wrXccuEtN"  
 class="btn btn-primary"  
 target="_blank"  
 rel="noopener noreferrer">  
 Discord Server  
 </a>  
-
+  
 <a href="https://www.youtube.com/@slkgamingssr"  
 class="btn btn-outline"  
 target="_blank"  
 rel="noopener noreferrer">  
 YouTube Channel  
 </a>  
-
+  
 </div>  
-
+  
 </div>  
-
+  
 </section>  
-
+  
 <footer>  
-
+  
 <p>© 2026 Hutao Team — All rights reserved.</p>  
-
+  
 <div class="footer-links">  
 <a href="#">Privacy</a>  
 <a href="#">FAQ</a>  
 <a href="#">Contact</a>  
 </div>  
-
+  
 </footer>  
-
+  
 </body>  
 </html>
