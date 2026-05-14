@@ -366,7 +366,6 @@ nav{
   color:#000;  
 }  
   
-/* ===== NEW AREA ===== */  
 .tabs{  
   display:flex;  
   justify-content:center;  
@@ -404,7 +403,6 @@ nav{
   color:var(--cyan);  
   cursor:pointer;  
 }  
-/* ===== END NEW AREA ===== */  
   
 .community-card{  
   text-align:center;  
@@ -493,9 +491,7 @@ Updated Daily
   
 <h1>APK Files<br>& <span>Game Scripts</span></h1>  
   
-<p>  
-Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tools inside one futuristic platform.  
-</p>  
+<p>Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tools inside one futuristic platform.</p>  
   
 <div class="hero-buttons">  
 <a href="#why" class="btn btn-primary">Explore Now</a>  
@@ -504,7 +500,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
   
 <div class="stats">  
 <div class="stat-box"><h3>500+</h3><p>Uploads Available</p></div>  
-<div class="stat-box"><h3>14/5 - 21:55</h3><p>Recently Updated</p></div>  
+<div class="stat-box"><h3>14/5 - 23:35</h3><p>Recently Updated</p></div>  
 <div class="stat-box"><h3>50.000+</h3><p>Community Users</p></div>  
 </div>  
   
@@ -519,11 +515,10 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 </div>  
   
 <div class="tabs">  
-<button class="tab-btn active" onclick="showTab('apk')">FILE APK</button>  
-<button class="tab-btn" onclick="showTab('script')">SCRIPT</button>  
+<button class="tab-btn active" onclick="showTab(event,'apk')">FILE APK</button>  
+<button class="tab-btn" onclick="showTab(event,'script')">SCRIPT</button>  
 </div>  
   
-<!-- APK TAB -->  
 <div id="apk" class="grid tab-content">  
   
 <div class="download-card">  
@@ -553,7 +548,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 </div>  
 </div>  
   
-<div class="download-card hidden">  
+<div class="download-card more-item hidden">  
 <div class="download-image">🧩</div>  
 <div class="download-content">  
 <h3>Extra APK</h3>  
@@ -568,7 +563,6 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
   
 </div>  
   
-<!-- SCRIPT TAB -->  
 <div id="script" class="grid tab-content hidden">  
   
 <div class="download-card">  
@@ -598,7 +592,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 </div>  
 </div>  
   
-<div class="download-card hidden">  
+<div class="download-card more-item hidden">  
 <div class="download-image">🧪</div>  
 <div class="download-content">  
 <h3>Hidden Script</h3>  
@@ -650,7 +644,7 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 </footer>  
   
 <script>  
-function showTab(id){  
+function showTab(event,id){  
   document.querySelectorAll('.tab-content').forEach(el=>el.classList.add('hidden'));  
   document.getElementById(id).classList.remove('hidden');  
   
@@ -660,14 +654,20 @@ function showTab(id){
   
 function toggleMore(type){  
   const section = document.getElementById(type);  
-  const hidden = section.querySelectorAll('.hidden');  
-  const btn = section.querySelector('button');  
+  const items = section.querySelectorAll('.more-item');  
+  const btn = section.querySelector('.more-btn button');  
   
-  hidden.forEach(el=>{  
-    el.classList.toggle('hidden');  
-  });  
+  const expanded = section.dataset.expanded === "1";  
   
-  btn.textContent = btn.textContent === "Xem thêm" ? "Ẩn bớt" : "Xem thêm";  
+  if(!expanded){  
+    items.forEach(el => el.classList.remove('hidden'));  
+    section.dataset.expanded = "1";  
+    btn.textContent = "Ẩn bớt";  
+  } else {  
+    items.forEach(el => el.classList.add('hidden'));  
+    section.dataset.expanded = "0";  
+    btn.textContent = "Xem thêm";  
+  }  
 }  
 </script>  
   
