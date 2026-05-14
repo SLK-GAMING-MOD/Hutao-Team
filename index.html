@@ -93,7 +93,14 @@ nav{
   background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2));  
   border:1px solid rgba(255,255,255,.08);  
   box-shadow:var(--glow);  
+  overflow:hidden;  
 }  
+
+.logo-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
   
 .logo{  
   font-size:25px;  
@@ -275,7 +282,6 @@ nav{
   gap:24px;  
 }  
   
-/* CARD FIX CLICK BLOCK */  
 .card{  
   position:relative;  
   overflow:hidden;  
@@ -322,7 +328,6 @@ nav{
   line-height:1.7;  
 }  
   
-/* DOWNLOAD */  
 .download-card{  
   overflow:hidden;  
   border-radius:28px;  
@@ -371,7 +376,6 @@ nav{
   color:#000;  
 }  
   
-/* COMMUNITY */  
 .community-card{  
   text-align:center;  
   padding:55px 30px;  
@@ -389,7 +393,6 @@ nav{
   line-height:1.8;  
 }  
   
-/* FOOTER */  
 footer{  
   padding:32px 7%;  
   border-top:1px solid rgba(255,255,255,.05);  
@@ -415,13 +418,11 @@ footer p{ color:var(--text2); }
   
 .footer-links a:hover{ color:var(--cyan); }  
   
-/* MOBILE */  
 @media(max-width:900px){  
   .hero{ min-height:auto; padding-top:70px; }  
   .hero h1{ font-size:56px; }  
   .hero p{ font-size:17px; }  
   .section-top h2{ font-size:38px; }  
-  .community-card h2{ font-size:40px; }  
   .nav-links{ display:none; }  
   .stats{ gap:12px; }  
   .stat-box{ width:100%; }  
@@ -437,7 +438,9 @@ footer p{ color:var(--text2); }
   
 <nav>  
 <div class="logo-wrap">  
-<div class="logo-icon">⚡</div>  
+<div class="logo-icon">
+<img src="hutaoteam.png" alt="logo">
+</div>  
 <div class="logo">Hutao Team</div>  
 </div>  
   
@@ -465,10 +468,8 @@ Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tool
 </p>  
   
 <div class="hero-buttons">  
-  
 <a href="#why" class="btn btn-primary">Explore Now</a>  
 <a href="#community" class="btn btn-outline">Join Community</a>  
-  
 </div>  
   
 <div class="stats">  
