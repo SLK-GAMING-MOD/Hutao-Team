@@ -42,89 +42,88 @@ body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-
 
 /* Navigation */
 nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-items:center; justify-content:space-between; backdrop-filter:blur(18px); background:rgba(7,11,18,.75); border-bottom:1px solid rgba(255,255,255,.05); }
-.logo-wrap{ display:flex; align-items:center; gap:14px; }
-.logo-icon{ width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2)); border:1px solid rgba(255,255,255,.08); }
+.logo-wrap{ display:flex; align-items:center; gap:14px; margin-left:-12px; }
+.logo-icon{ width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--glow); }
 .logo-icon img{ width:100%; height:100%; object-fit:cover; }
-.logo{ font-size:22px; font-weight:700; letter-spacing:.5px; }
+.logo{ font-size:23px; font-weight:700; letter-spacing:.5px; }
 
 .nav-links{ display:flex; gap:25px; }
-.nav-links a{ color:var(--text2); text-decoration:none; transition:.3s; font-size:14px; font-weight: 500; }
+.nav-links a{ color:var(--text2); text-decoration:none; transition:.3s; font-size:15px; }
 .nav-links a:hover{ color:var(--cyan); }
 
-/* --- Hero Section (Đã thu gọn khoảng cách thừa) --- */
-.hero{ min-height: 60vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:30px 7% 20px; }
-.hero-content{ max-width:900px; width: 100%; }
+/* --- Hero Section (Dịch chuyển lên trên) --- */
+.hero{ min-height: 55vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:30px 7% 10px; }
+.hero-content{ max-width:920px; width: 100%; }
 
-.badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 16px; border-radius:999px; border:1px solid rgba(0,229,255,.2); background:rgba(255,255,255,.03); color:var(--cyan); margin-bottom:15px; font-size: 13px; }
-.badge-dot{ width:6px; height:6px; border-radius:50%; background:var(--cyan); box-shadow:0 0 10px var(--cyan); }
+.hero h1{ font-size:78px; line-height:1.1; margin-bottom:15px; font-weight: 700; }
+.hero p{ max-width:680px; margin:0 auto 25px; color:var(--text2); font-size:19px; line-height:1.6; }
 
-.hero h1{ font-size:72px; line-height:1.1; margin-bottom:12px; font-weight: 700; }
-.hero p{ max-width:650px; margin:0 auto 25px; color:var(--text2); font-size:18px; line-height:1.6; }
-
-.hero-buttons{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom: 35px; }
-.btn{ padding:14px 26px; border-radius:14px; text-decoration:none; font-weight:600; transition:.35s; font-size: 15px; }
+.hero-buttons{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+.btn{ padding:15px 28px; border-radius:15px; text-decoration:none; font-weight:600; transition:.35s; display:inline-block;}
 .btn-primary{ background:linear-gradient(90deg,var(--cyan),var(--blue)); color:#000; box-shadow:var(--glow); }
-.btn-primary:hover{ transform:translateY(-3px); opacity: 0.9; }
+.btn-primary:hover{ transform:translateY(-4px); opacity: 0.95; }
 .btn-outline{ border:1px solid rgba(255,255,255,.1); color:var(--text); background:rgba(255,255,255,.03); }
 .btn-outline:hover{ border-color:var(--cyan); color:var(--cyan); background: rgba(0,229,255,0.05); }
 
-/* --- Stats (Gọn gàng hơn) --- */
-.stats{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
-.stat-box{ min-width:160px; padding:18px; border-radius:20px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); transition: 0.3s; }
-.stat-box h3{ font-size:28px; margin-bottom: 4px; }
+/* --- Stats (Thu hẹp khoảng cách thừa) --- */
+.stats{ margin-top:40px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+.stat-box{ min-width:170px; padding:20px; border-radius:22px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); transition: 0.3s; }
+.stat-box:hover { transform: translateY(-5px); border-color: rgba(0,229,255,0.2); }
+.stat-box h3{ font-size:32px; margin-bottom: 4px; }
 .stat-box p{ color:var(--text2); font-size:13px; }
 
 /* Search Bar */
 .search-wrapper { max-width: 500px; margin: 0 auto 35px; position: relative; }
-.search-bar { width: 100%; padding: 14px 20px 14px 45px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 15px; transition: 0.3s; }
-.search-bar:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.08); }
-.search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text2); }
+.search-bar { width: 100%; padding: 15px 20px 15px 48px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 16px; transition: 0.3s; }
+.search-bar:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.08); box-shadow: 0 0 15px rgba(0,225,255,0.1); }
+.search-icon { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: var(--text2); font-size: 18px; }
 
 /* Download Center */
 .section{ padding:50px 7%; }
 .section-top{ text-align:center; margin-bottom:35px; }
-.section-top span{ color:var(--cyan); font-size:12px; letter-spacing:2px; font-weight: 600; display: block; margin-bottom: 8px;}
-.section-top h2{ font-size:42px; margin-bottom: 10px; }
-.section-top p{ color:var(--text2); font-size: 16px; }
+.section-top span{ color:var(--cyan); font-size:12px; letter-spacing:2px; display: block; margin-bottom: 8px;}
+.section-top h2{ font-size:48px; margin-bottom: 12px; }
+.section-top p{ color:var(--text2); font-size: 17px; }
 
 .tabs{ display:flex; justify-content:center; gap:12px; margin-bottom:25px; }
-.tab-btn{ padding:10px 20px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); color:var(--text2); cursor:pointer; transition:.3s; font-size: 14px; }
-.tab-btn.active{ color:#000; background:linear-gradient(90deg,var(--cyan),var(--blue)); border:none; font-weight: 600; }
+.tab-btn{ padding:10px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); color:var(--text2); cursor:pointer; transition:.3s; font-weight: 500;}
+.tab-btn.active{ color:#000; background:linear-gradient(90deg,var(--cyan),var(--blue)); border:none; }
 
-.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-.download-card{ overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,.05); background:rgba(255,255,255,0.02); transition:.35s; }
-.download-card:hover{ transform:translateY(-5px); border-color:rgba(0,229,255,0.2); }
-.download-image{ height:160px; display:flex; align-items:center; justify-content:center; font-size:50px; background:linear-gradient(135deg,rgba(0,229,255,.1),rgba(139,92,255,.1)); }
-.download-content{ padding:20px; }
-.download-content h3{ margin-bottom:8px; font-size:20px; }
-.download-content p{ color:var(--text2); line-height:1.6; margin-bottom:18px; font-size: 14px; min-height: 44px;}
-.download-btn{ display:block; text-align: center; padding:12px; border-radius:10px; text-decoration:none; color:var(--cyan); background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.2); transition:.3s; font-weight: 600; }
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
+.download-card{ overflow:hidden; border-radius:26px; border:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); transition:.35s; }
+.download-card:hover{ transform:translateY(-8px); border-color:rgba(0,229,255,.2); }
+.download-image{ height:170px; display:flex; align-items:center; justify-content:center; font-size:55px; background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(139,92,255,.14)); }
+.download-content{ padding:22px; }
+.download-content h3{ margin-bottom:8px; font-size:22px; color: var(--text); }
+.download-content p{ color:var(--text2); line-height:1.6; margin-bottom:20px; min-height: 44px; font-size: 15px; }
+.download-btn{ display:inline-block; padding:12px 22px; border-radius:12px; text-decoration:none; color:var(--cyan); background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.22); transition:.3s; font-weight: 600; }
 .download-btn:hover{ background:var(--cyan); color:#000; }
 
-.no-results { display: none; text-align: center; padding: 40px; color: var(--text2); grid-column: 1/-1; }
+.no-results { display: none; text-align: center; padding: 40px; color: var(--text2); font-size: 18px; grid-column: 1/-1; }
 .hidden{ display:none !important; }
 
-.more-btn-wrap{ text-align:center; margin-top:20px; grid-column: 1/-1; }
-.more-btn-wrap button{ padding:10px 22px; border-radius:10px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.05); color:var(--cyan); cursor:pointer; font-weight: 600; }
+.more-btn-wrap{ text-align:center; margin-top:25px; grid-column: 1/-1; }
+.more-btn-wrap button{ padding:10px 22px; border-radius:12px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer; font-weight: 600; transition: 0.3s; }
 
-/* Community */
-.community-card{ text-align:center; padding:50px 30px; border-radius: 30px; }
-.community-card h2{ font-size:42px; margin-bottom:15px; }
+/* Features & Community */
+.card{ position:relative; overflow:hidden; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:28px; padding:28px; transition:.35s; }
+.card-icon{ width:60px; height:60px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:rgba(0,229,255,.08); font-size:28px; margin-bottom:22px; }
+.community-card{ text-align:center; padding:50px 30px; }
+.community-card h2{ font-size:48px; margin-bottom:15px; }
 
 footer{ padding:30px 7%; border-top:1px solid rgba(255,255,255,.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 footer p{ color:var(--text2); font-size: 14px; }
-.footer-links{ display:flex; gap:15px; }
-.footer-links a{ color:var(--text2); text-decoration:none; font-size: 14px; }
+.footer-links{ display:flex; gap:18px; }
+.footer-links a{ color:var(--text2); text-decoration:none; transition:.3s; font-size: 14px; }
+.footer-links a:hover{ color:var(--cyan); }
 
-/* Responsive Mobile Optimization */
-@media(max-width:768px){
+@media(max-width:900px){
   .hero{ padding-top: 20px; min-height: auto; }
-  .hero h1{ font-size:42px; }
-  .hero p{ font-size:16px; }
-  .section-top h2{ font-size:32px; }
+  .hero h1{ font-size:48px; }
+  .section-top h2{ font-size:36px; }
   .nav-links{ display:none; }
-  .stat-box{ min-width: 46%; flex-grow: 1; padding: 15px; }
-  .stat-box h3{ font-size: 22px; }
+  .stat-box{ min-width: 45%; flex-grow: 1; padding: 18px; }
+  .stat-box h3{ font-size: 26px; }
 }
 </style>
 </head>
@@ -139,7 +138,7 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="logo text-gradient">Hutao Team</div>
   </div>
   <div class="nav-links">
-    <a href="#top">Home</a>
+    <a href="#">Home</a>
     <a href="#downloads">APK</a>
     <a href="#downloads">Scripts</a>
     <a href="#community">Community</a>
@@ -148,7 +147,6 @@ footer p{ color:var(--text2); font-size: 14px; }
 
 <section class="hero" id="top">
   <div class="hero-content">
-    <div class="badge"><div class="badge-dot"></div> website online 24/7</div>
     <h1>APK Files<br>& <span class="text-gradient">Game Scripts</span></h1>
     <p>Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tools inside one futuristic platform.</p>
     <div class="hero-buttons">
@@ -157,9 +155,9 @@ footer p{ color:var(--text2); font-size: 14px; }
     </div>
     
     <div class="stats">
-      <div class="stat-box"><h3 class="text-gradient">500+</h3><p>Uploads</p></div>
-      <div class="stat-box"><h3 class="text-gradient">14/5 - 23:35</h3><p>Updated</p></div>
-      <div class="stat-box"><h3 class="text-gradient">50.000+</h3><p>Users</p></div>
+      <div class="stat-box"><h3 class="text-gradient">500+</h3><p>Uploads Available</p></div>
+      <div class="stat-box"><h3 class="text-gradient">14/5 - 23:35</h3><p>Recently Updated</p></div>
+      <div class="stat-box"><h3 class="text-gradient">50.000+</h3><p>Community Users</p></div>
     </div>
   </div>
 </section>
@@ -168,7 +166,7 @@ footer p{ color:var(--text2); font-size: 14px; }
   <div class="section-top">
     <span>ALL FILES</span>
     <h2 class="text-gradient">Downloads Center</h2>
-    <p>Find your favorite tools instantly.</p>
+    <p>Search and find your favorite tools instantly.</p>
   </div>
 
   <div class="search-wrapper">
@@ -185,7 +183,7 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card">
       <div class="download-image">🎮</div>
       <div class="download-content">
-        <h3>Minecraft China</h3>
+        <h3>Minecraft China APK</h3>
         <p>Latest version optimized gameplay.</p>
         <a href="#" class="download-btn">Download APK</a>
       </div>
@@ -193,7 +191,7 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card">
       <div class="download-image">📦</div>
       <div class="download-content">
-        <h3>Free Fire Lite</h3>
+        <h3>Free Fire APK</h3>
         <p>Lite version smooth performance.</p>
         <a href="#" class="download-btn">Download APK</a>
       </div>
@@ -201,7 +199,7 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card">
       <div class="download-image">🚀</div>
       <div class="download-content">
-        <h3>Executor Pro</h3>
+        <h3>Executor Tool</h3>
         <p>Fast injection tool Android.</p>
         <a href="#" class="download-btn">Download APK</a>
       </div>
@@ -209,12 +207,12 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card more-item hidden">
       <div class="download-image">🧩</div>
       <div class="download-content">
-        <h3>Extra Mod</h3>
+        <h3>Extra Game APK</h3>
         <p>Bonus file for premium users.</p>
         <a href="#" class="download-btn">Download APK</a>
       </div>
     </div>
-    <div class="no-results" id="no-apk">No APK found.</div>
+    <div class="no-results" id="no-apk">No APK found with that name.</div>
     <div class="more-btn-wrap" id="more-apk">
       <button onclick="toggleMore('apk')">Show more</button>
     </div>
@@ -224,15 +222,23 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card">
       <div class="download-image">💻</div>
       <div class="download-content">
-        <h3>Dead Rails</h3>
+        <h3>Dead Rails Script</h3>
         <p>Auto farm + ESP + teleport.</p>
+        <a href="#" class="download-btn">Open Script</a>
+      </div>
+    </div>
+    <div class="download-card">
+      <div class="download-image">😃</div>
+      <div class="download-content">
+        <h3>Troll Script</h3>
+        <p>Auto troll all player</p>
         <a href="#" class="download-btn">Open Script</a>
       </div>
     </div>
     <div class="download-card">
       <div class="download-image">⚙️</div>
       <div class="download-content">
-        <h3>Blox Fruits</h3>
+        <h3>Blox Fruits Script</h3>
         <p>Auto quest system updated.</p>
         <a href="#" class="download-btn">Open Script</a>
       </div>
@@ -240,15 +246,27 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card more-item hidden">
       <div class="download-image">🔥</div>
       <div class="download-content">
-        <h3>OP Hub</h3>
+        <h3>OP Script Hub</h3>
         <p>Multi game support for Roblox.</p>
         <a href="#" class="download-btn">Open Script</a>
       </div>
     </div>
-    <div class="no-results" id="no-script">No scripts found.</div>
+    <div class="no-results" id="no-script">No scripts found with that name.</div>
     <div class="more-btn-wrap" id="more-script">
       <button onclick="toggleMore('script')">Show more</button>
     </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="section-top">
+    <span>WHY HUTAO TEAM</span>
+    <h2 class="text-gradient">Everything You Need</h2>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="card-icon">⚡</div><h3>Fast Downloads</h3><p>Direct high-speed APK and script downloads.</p></div>
+    <div class="card"><div class="card-icon">🛡️</div><h3>Safe Files</h3><p>All files checked before upload.</p></div>
+    <div class="card"><div class="card-icon">🔥</div><h3>Daily Updates</h3><p>New executors, Roblox scripts every day.</p></div>
   </div>
 </section>
 
@@ -256,24 +274,20 @@ footer p{ color:var(--text2); font-size: 14px; }
   <div class="card community-card">
     <h2 class="text-gradient">Join The Community</h2>
     <p>Get updates about APKs, scripts and mods.</p>
-    <div class="hero-buttons" style="margin-top:20px;">
+    <div class="hero-buttons">
       <a href="https://discord.gg/wrXccuEtN" class="btn btn-primary" target="_blank">Discord Server</a>
-      <a href="https://www.youtube.com/@slkgamingssr" class="btn btn-outline" target="_blank">YouTube</a>
+      <a href="https://www.youtube.com/@slkgamingssr" class="btn btn-outline" target="_blank">YouTube Channel</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Hutao Team</p>
-  <div class="footer-links">
-    <a href="#">Privacy</a>
-    <a href="#">FAQ</a>
-    <a href="#">Contact</a>
-  </div>
+  <p>© 2026 Hutao Team — All rights reserved.</p>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a></div>
 </footer>
 
 <script>
-// Quản lý Tabs
+// Tabs Management
 function showTab(type) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -285,7 +299,7 @@ function showTab(type) {
   handleSearch(); 
 }
 
-// Logic Tìm kiếm
+// Search Logic
 function handleSearch() {
   const query = document.getElementById('searchInput').value.toLowerCase();
   const activeTabId = document.querySelector('.tab-content:not(.hidden)').id;
@@ -298,7 +312,9 @@ function handleSearch() {
 
   cards.forEach(card => {
     const title = card.querySelector('h3').innerText.toLowerCase();
-    if(title.includes(query)) {
+    const desc = card.querySelector('p').innerText.toLowerCase();
+    
+    if(title.includes(query) || desc.includes(query)) {
       card.style.display = "block";
       hasVisible = true;
     } else {
@@ -318,7 +334,7 @@ function handleSearch() {
   }
 }
 
-// Show More
+// Show More Logic
 function toggleMore(type){
   const section = document.getElementById(type);
   const items = section.querySelectorAll('.more-item');
