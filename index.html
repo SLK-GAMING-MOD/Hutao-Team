@@ -27,6 +27,14 @@
 html{ scroll-behavior:smooth; }
 body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
 
+/* Hiệu ứng Gradient Chữ (Multi-color) */
+.text-gradient {
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
 /* Background Decoration */
 .bg-blur{ position:fixed; width:600px; height:600px; border-radius:50%; filter:blur(120px); z-index:-1; opacity:.22; }
 .bg1{ background:var(--cyan); top:-200px; left:-150px; }
@@ -37,18 +45,19 @@ nav{ position:sticky; top:0; z-index:1000; padding:14px 6%; display:flex; align-
 .logo-wrap{ display:flex; align-items:center; gap:18px; margin-left:-12px; }
 .logo-icon{ width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--glow); }
 .logo-icon img{ width:100%; height:100%; object-fit:cover; }
-.logo{ font-size:25px; font-weight:700; letter-spacing:.5px; background:linear-gradient(90deg,var(--cyan),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.logo{ font-size:25px; font-weight:700; letter-spacing:.5px; }
+
 .nav-links{ display:flex; gap:28px; }
 .nav-links a{ color:var(--text2); text-decoration:none; transition:.3s; font-size:15px; }
 .nav-links a:hover{ color:var(--cyan); }
 
 /* Hero Section */
-.hero{ min-height:82vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 7% 40px; }
+.hero{ min-height:82vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 7% 0; }
 .hero-content{ max-width:920px; }
 .badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border-radius:999px; border:1px solid rgba(0,229,255,.2); background:rgba(255,255,255,.03); color:var(--cyan); margin-bottom:22px; }
 .badge-dot{ width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--cyan); }
-.hero h1{ font-size:82px; line-height:1; margin-bottom:18px; }
-.hero h1 span{ background:linear-gradient(90deg,var(--cyan),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero h1{ font-size:82px; line-height:1.1; margin-bottom:18px; }
+
 .hero p{ max-width:720px; margin:auto; color:var(--text2); font-size:20px; line-height:1.7; }
 .hero-buttons{ margin-top:30px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
 
@@ -58,39 +67,14 @@ nav{ position:sticky; top:0; z-index:1000; padding:14px 6%; display:flex; align-
 .btn-outline{ border:1px solid rgba(255,255,255,.1); color:var(--text); background:rgba(255,255,255,.03); }
 .btn-outline:hover{ border-color:var(--cyan); color:var(--cyan); }
 
-/* --- FIXED STATS FROM V3 --- */
-.stats{ 
-  margin-top:55px; 
-  display:flex; 
-  justify-content:center; /* Xếp hàng ngang và căn giữa */
-  gap:18px; 
-  flex-wrap:wrap; /* Tự xuống dòng trên mobile */
-}
-.stat-box{ 
-  min-width:180px; /* Lấy lại kích thước từ v3 */
-  padding:22px; 
-  border-radius:22px; 
-  background:rgba(255,255,255,.03); 
-  border:1px solid rgba(255,255,255,.05); 
-  backdrop-filter: blur(5px);
-  transition: 0.3s ease;
-}
-.stat-box:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(0,229,255,0.2);
-  transform: translateY(-5px); /* Hiệu ứng bay lên nhẹ */
-}
-.stat-box h3{ 
-  font-size:34px; /* Size chuẩn v3 */
-  font-weight: 700;
-  background:linear-gradient(90deg,var(--cyan),var(--purple)); 
-  -webkit-background-clip:text; 
-  -webkit-text-fill-color:transparent; 
-}
-.stat-box p{ color:var(--text2); margin-top:8px; font-size:14px; font-weight: 400; }
-/* -------------------------- */
+/* --- Stats (Restore v3 Style) --- */
+.stats{ margin-top:55px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
+.stat-box{ min-width:180px; padding:22px; border-radius:22px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); transition: 0.3s; }
+.stat-box:hover { transform: translateY(-5px); border-color: rgba(0,229,255,0.2); }
+.stat-box h3{ font-size:34px; margin-bottom: 5px; }
+.stat-box p{ color:var(--text2); font-size:14px; }
 
-/* SEARCH BAR */
+/* Search Bar */
 .search-wrapper { max-width: 500px; margin: 0 auto 40px; position: relative; }
 .search-bar { width: 100%; padding: 16px 20px 16px 50px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 16px; transition: 0.3s; }
 .search-bar:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.08); box-shadow: 0 0 15px rgba(0,225,255,0.1); }
@@ -99,8 +83,9 @@ nav{ position:sticky; top:0; z-index:1000; padding:14px 6%; display:flex; align-
 /* Download Center */
 .section{ padding:75px 7%; }
 .section-top{ text-align:center; margin-bottom:45px; }
-.section-top span{ color:var(--cyan); font-size:13px; letter-spacing:2px; }
-.section-top h2{ font-size:52px; margin-top:14px; }
+.section-top span{ color:var(--cyan); font-size:13px; letter-spacing:2px; display: block; margin-bottom: 10px;}
+.section-top h2{ font-size:52px; margin-bottom: 15px; }
+.section-top p{ color:var(--text2); font-size: 18px; }
 
 .tabs{ display:flex; justify-content:center; gap:14px; margin-bottom:25px; }
 .tab-btn{ padding:10px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); color:var(--text2); cursor:pointer; transition:.3s; font-weight: 500;}
@@ -111,26 +96,35 @@ nav{ position:sticky; top:0; z-index:1000; padding:14px 6%; display:flex; align-
 .download-card:hover{ transform:translateY(-8px); border-color:rgba(0,229,255,.2); }
 .download-image{ height:180px; display:flex; align-items:center; justify-content:center; font-size:60px; background:linear-gradient(135deg,rgba(0,229,255,.16),rgba(139,92,255,.18)); }
 .download-content{ padding:24px; }
-.download-content h3{ margin-bottom:10px; font-size:24px; }
+.download-content h3{ margin-bottom:10px; font-size:24px; color: var(--text); }
 .download-content p{ color:var(--text2); line-height:1.7; margin-bottom:22px; min-height: 48px; }
 .download-btn{ display:inline-block; padding:12px 22px; border-radius:12px; text-decoration:none; color:var(--cyan); background:rgba(0,229,255,.08); border:1px solid rgba(0,229,255,.22); transition:.3s; }
+.download-btn:hover{ background:var(--cyan); color:#000; }
 
 .no-results { display: none; text-align: center; padding: 40px; color: var(--text2); font-size: 18px; grid-column: 1/-1; }
 .hidden{ display:none !important; }
 
 .more-btn-wrap{ text-align:center; margin-top:30px; grid-column: 1/-1; }
-.more-btn-wrap button{ padding:10px 22px; border-radius:12px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer; font-weight: 600; }
+.more-btn-wrap button{ padding:10px 22px; border-radius:12px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer; font-weight: 600; transition: 0.3s; }
+.more-btn-wrap button:hover { background: var(--cyan); color: #000; }
 
-/* Footer */
+/* Features & Community */
+.card{ position:relative; overflow:hidden; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:28px; padding:28px; transition:.35s; }
+.card-icon{ width:60px; height:60px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:rgba(0,229,255,.08); font-size:28px; margin-bottom:22px; }
+.community-card{ text-align:center; padding:55px 30px; }
+.community-card h2{ font-size:52px; margin-bottom:18px; }
+
 footer{ padding:32px 7%; border-top:1px solid rgba(255,255,255,.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 footer p{ color:var(--text2); }
+.footer-links{ display:flex; gap:18px; }
+.footer-links a{ color:var(--text2); text-decoration:none; transition:.3s; }
+.footer-links a:hover{ color:var(--cyan); }
 
 @media(max-width:900px){
-  .hero h1{ font-size:48px; }
-  .section-top h2{ font-size:32px; }
+  .hero h1{ font-size:52px; }
+  .section-top h2{ font-size:38px; }
   .nav-links{ display:none; }
-  .stats{ gap:12px; }
-  .stat-box{ width:100%; min-width: unset; } /* Full width trên mobile */
+  .stat-box{ min-width: 45%; flex-grow: 1; }
 }
 </style>
 </head>
@@ -142,7 +136,7 @@ footer p{ color:var(--text2); }
 <nav>
   <div class="logo-wrap">
     <div class="logo-icon"><img src="hutaoteam.png" alt="logo"></div>
-    <div class="logo">Hutao Team</div>
+    <div class="logo text-gradient">Hutao Team</div>
   </div>
   <div class="nav-links">
     <a href="#">Home</a>
@@ -155,7 +149,7 @@ footer p{ color:var(--text2); }
 <section class="hero" id="top">
   <div class="hero-content">
     <div class="badge"><div class="badge-dot"></div> Updated Daily</div>
-    <h1>APK Files<br>& <span>Game Scripts</span></h1>
+    <h1>APK Files<br>& <span class="text-gradient">Game Scripts</span></h1>
     <p>Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tools inside one futuristic platform.</p>
     <div class="hero-buttons">
       <a href="#downloads" class="btn btn-primary">Explore Now</a>
@@ -163,9 +157,9 @@ footer p{ color:var(--text2); }
     </div>
     
     <div class="stats">
-      <div class="stat-box"><h3>500+</h3><p>Uploads Available</p></div>
-      <div class="stat-box"><h3>14/5 - 23:35</h3><p>Recently Updated</p></div>
-      <div class="stat-box"><h3>50.000+</h3><p>Community Users</p></div>
+      <div class="stat-box"><h3 class="text-gradient">500+</h3><p>Uploads Available</p></div>
+      <div class="stat-box"><h3 class="text-gradient">14/5 - 23:35</h3><p>Recently Updated</p></div>
+      <div class="stat-box"><h3 class="text-gradient">50.000+</h3><p>Community Users</p></div>
     </div>
   </div>
 </section>
@@ -173,7 +167,8 @@ footer p{ color:var(--text2); }
 <section class="section" id="downloads">
   <div class="section-top">
     <span>ALL FILES</span>
-    <h2>Downloads Center</h2>
+    <h2 class="text-gradient">Downloads Center</h2>
+    <p>Search and find your favorite tools instantly.</p>
   </div>
 
   <div class="search-wrapper">
@@ -186,6 +181,7 @@ footer p{ color:var(--text2); }
     <button class="tab-btn" id="btn-script" onclick="showTab('script')">SCRIPT</button>
   </div>
 
+  <!-- APK GRID -->
   <div id="apk" class="grid tab-content">
     <div class="download-card">
       <div class="download-image">🎮</div>
@@ -203,14 +199,29 @@ footer p{ color:var(--text2); }
         <a href="#" class="download-btn">Download APK</a>
       </div>
     </div>
+    <div class="download-card">
+      <div class="download-image">🚀</div>
+      <div class="download-content">
+        <h3>Executor Tool</h3>
+        <p>Fast injection tool Android.</p>
+        <a href="#" class="download-btn">Download APK</a>
+      </div>
+    </div>
     <div class="download-card more-item hidden">
       <div class="download-image">🧩</div>
-      <div class="download-content"><h3>Extra APK</h3><p>Bonus file.</p><a href="#" class="download-btn">Download APK</a></div>
+      <div class="download-content">
+        <h3>Extra Game APK</h3>
+        <p>Bonus file for premium users.</p>
+        <a href="#" class="download-btn">Download APK</a>
+      </div>
     </div>
-    <div class="no-results" id="no-apk">No APK found.</div>
-    <div class="more-btn-wrap" id="more-apk"><button onclick="toggleMore('apk')">Show more</button></div>
+    <div class="no-results" id="no-apk">No APK found with that name.</div>
+    <div class="more-btn-wrap" id="more-apk">
+      <button onclick="toggleMore('apk')">Show more</button>
+    </div>
   </div>
 
+  <!-- SCRIPT GRID -->
   <div id="script" class="grid tab-content hidden">
     <div class="download-card">
       <div class="download-image">💻</div>
@@ -220,25 +231,71 @@ footer p{ color:var(--text2); }
         <a href="#" class="download-btn">Open Script</a>
       </div>
     </div>
-    <div class="no-results" id="no-script">No scripts found.</div>
-    <div class="more-btn-wrap" id="more-script"><button onclick="toggleMore('script')">Show more</button></div>
+    <div class="download-card">
+      <div class="download-image">⚙️</div>
+      <div class="download-content">
+        <h3>Blox Fruits Script</h3>
+        <p>Auto quest system updated.</p>
+        <a href="#" class="download-btn">Open Script</a>
+      </div>
+    </div>
+    <div class="download-card more-item hidden">
+      <div class="download-image">🔥</div>
+      <div class="download-content">
+        <h3>OP Script Hub</h3>
+        <p>Multi game support for Roblox.</p>
+        <a href="#" class="download-btn">Open Script</a>
+      </div>
+    </div>
+    <div class="no-results" id="no-script">No scripts found with that name.</div>
+    <div class="more-btn-wrap" id="more-script">
+      <button onclick="toggleMore('script')">Show more</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="section-top">
+    <span>WHY HUTAO TEAM</span>
+    <h2 class="text-gradient">Everything You Need</h2>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="card-icon">⚡</div><h3>Fast Downloads</h3><p>Direct high-speed APK and script downloads.</p></div>
+    <div class="card"><div class="card-icon">🛡️</div><h3>Safe Files</h3><p>All files checked before upload.</p></div>
+    <div class="card"><div class="card-icon">🔥</div><h3>Daily Updates</h3><p>New executors, Roblox scripts every day.</p></div>
+  </div>
+</section>
+
+<section class="section" id="community">
+  <div class="card community-card">
+    <h2 class="text-gradient">Join The Community</h2>
+    <p>Get updates about APKs, scripts and mods.</p>
+    <div class="hero-buttons">
+      <a href="https://discord.gg/wrXccuEtN" class="btn btn-primary" target="_blank">Discord Server</a>
+      <a href="https://www.youtube.com/@slkgamingssr" class="btn btn-outline" target="_blank">YouTube Channel</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <p>© 2026 Hutao Team — All rights reserved.</p>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a></div>
 </footer>
 
 <script>
+// Tabs Management
 function showTab(type) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  
   document.getElementById(type).classList.remove('hidden');
   document.getElementById('btn-' + type).classList.add('active');
+  
   document.getElementById('searchInput').value = '';
   handleSearch(); 
 }
 
+// Search Logic
 function handleSearch() {
   const query = document.getElementById('searchInput').value.toLowerCase();
   const activeTabId = document.querySelector('.tab-content:not(.hidden)').id;
@@ -248,9 +305,12 @@ function handleSearch() {
   const moreBtnWrap = document.getElementById('more-' + activeTabId);
   
   let hasVisible = false;
+
   cards.forEach(card => {
     const title = card.querySelector('h3').innerText.toLowerCase();
-    if(title.includes(query)) {
+    const desc = card.querySelector('p').innerText.toLowerCase();
+    
+    if(title.includes(query) || desc.includes(query)) {
       card.style.display = "block";
       hasVisible = true;
     } else {
@@ -259,15 +319,24 @@ function handleSearch() {
   });
 
   noResults.style.display = hasVisible ? "none" : "block";
-  if (query.length > 0) moreBtnWrap.style.display = "none";
-  else moreBtnWrap.style.display = "block";
+  
+  if (query.length > 0) {
+    moreBtnWrap.style.display = "none";
+  } else {
+    moreBtnWrap.style.display = "block";
+    if (container.dataset.expanded !== "1") {
+       container.querySelectorAll('.more-item').forEach(el => el.classList.add('hidden'));
+    }
+  }
 }
 
+// Show More Logic
 function toggleMore(type){
   const section = document.getElementById(type);
   const items = section.querySelectorAll('.more-item');
   const btn = section.querySelector('.more-btn-wrap button');
   const isExpanded = section.dataset.expanded === "1";
+  
   if(!isExpanded){
     items.forEach(el => el.classList.remove('hidden'));
     section.dataset.expanded = "1";
