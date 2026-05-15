@@ -27,7 +27,6 @@
 html{ scroll-behavior:smooth; }
 body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
 
-/* Hiệu ứng Gradient Chữ */
 .text-gradient {
   background: linear-gradient(90deg, var(--cyan), var(--purple));
   -webkit-background-clip: text;
@@ -35,12 +34,10 @@ body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-
   display: inline-block;
 }
 
-/* Background Decoration */
 .bg-blur{ position:fixed; width:600px; height:600px; border-radius:50%; filter:blur(120px); z-index:-1; opacity:.22; }
 .bg1{ background:var(--cyan); top:-200px; left:-150px; }
 .bg2{ background:var(--purple); right:-180px; top:120px; }
 
-/* Navigation */
 nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-items:center; justify-content:space-between; backdrop-filter:blur(18px); background:rgba(7,11,18,.75); border-bottom:1px solid rgba(255,255,255,.05); }
 .logo-wrap{ display:flex; align-items:center; gap:14px; margin-left:-12px; }
 .logo-icon{ width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--glow); }
@@ -51,10 +48,8 @@ nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-
 .nav-links a{ color:var(--text2); text-decoration:none; transition:.3s; font-size:15px; }
 .nav-links a:hover{ color:var(--cyan); }
 
-/* --- Hero Section (Dịch chuyển lên trên) --- */
 .hero{ min-height: 55vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:30px 7% 10px; }
 .hero-content{ max-width:920px; width: 100%; }
-
 .hero h1{ font-size:78px; line-height:1.1; margin-bottom:15px; font-weight: 700; }
 .hero p{ max-width:680px; margin:0 auto 25px; color:var(--text2); font-size:19px; line-height:1.6; }
 
@@ -65,20 +60,16 @@ nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-
 .btn-outline{ border:1px solid rgba(255,255,255,.1); color:var(--text); background:rgba(255,255,255,.03); }
 .btn-outline:hover{ border-color:var(--cyan); color:var(--cyan); background: rgba(0,229,255,0.05); }
 
-/* --- Stats (Thu hẹp khoảng cách thừa) --- */
 .stats{ margin-top:40px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
 .stat-box{ min-width:170px; padding:20px; border-radius:22px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); transition: 0.3s; }
-.stat-box:hover { transform: translateY(-5px); border-color: rgba(0,229,255,0.2); }
 .stat-box h3{ font-size:32px; margin-bottom: 4px; }
 .stat-box p{ color:var(--text2); font-size:13px; }
 
-/* Search Bar */
 .search-wrapper { max-width: 500px; margin: 0 auto 35px; position: relative; }
 .search-bar { width: 100%; padding: 15px 20px 15px 48px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 16px; transition: 0.3s; }
 .search-bar:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.08); box-shadow: 0 0 15px rgba(0,225,255,0.1); }
 .search-icon { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: var(--text2); font-size: 18px; }
 
-/* Download Center */
 .section{ padding:50px 7%; }
 .section-top{ text-align:center; margin-bottom:35px; }
 .section-top span{ color:var(--cyan); font-size:12px; letter-spacing:2px; display: block; margin-bottom: 8px;}
@@ -105,7 +96,6 @@ nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-
 .more-btn-wrap{ text-align:center; margin-top:25px; grid-column: 1/-1; }
 .more-btn-wrap button{ padding:10px 22px; border-radius:12px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer; font-weight: 600; transition: 0.3s; }
 
-/* Features & Community */
 .card{ position:relative; overflow:hidden; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:28px; padding:28px; transition:.35s; }
 .card-icon{ width:60px; height:60px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:rgba(0,229,255,.08); font-size:28px; margin-bottom:22px; }
 .community-card{ text-align:center; padding:50px 30px; }
@@ -123,7 +113,6 @@ footer p{ color:var(--text2); font-size: 14px; }
   .section-top h2{ font-size:36px; }
   .nav-links{ display:none; }
   .stat-box{ min-width: 45%; flex-grow: 1; padding: 18px; }
-  .stat-box h3{ font-size: 26px; }
 }
 </style>
 </head>
@@ -185,7 +174,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Minecraft China APK</h3>
         <p>Latest version optimized gameplay.</p>
-        <a href="#" class="download-btn">Download APK</a>
+        <a href="https://link-tai-minecraft.com" target="_blank" class="download-btn">Download APK</a>
       </div>
     </div>
     <div class="download-card">
@@ -193,7 +182,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Free Fire APK</h3>
         <p>Lite version smooth performance.</p>
-        <a href="#" class="download-btn">Download APK</a>
+        <a href="https://link-tai-freefire.com" target="_blank" class="download-btn">Download APK</a>
       </div>
     </div>
     <div class="download-card">
@@ -201,7 +190,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Executor Tool</h3>
         <p>Fast injection tool Android.</p>
-        <a href="#" class="download-btn">Download APK</a>
+        <a href="https://link-tai-executor.com" target="_blank" class="download-btn">Download APK</a>
       </div>
     </div>
     <div class="download-card more-item hidden">
@@ -209,7 +198,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Extra Game APK</h3>
         <p>Bonus file for premium users.</p>
-        <a href="#" class="download-btn">Download APK</a>
+        <a href="https://link-tai-extra.com" target="_blank" class="download-btn">Download APK</a>
       </div>
     </div>
     <div class="no-results" id="no-apk">No APK found with that name.</div>
@@ -224,7 +213,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Dead Rails Script</h3>
         <p>Auto farm + ESP + teleport.</p>
-        <a href="#" class="download-btn">Open Script</a>
+        <a href="https://link-script-deadrails.com" target="_blank" class="download-btn">Open Script</a>
       </div>
     </div>
     <div class="download-card">
@@ -232,7 +221,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Troll Script</h3>
         <p>Auto troll all player</p>
-        <a href="#" class="download-btn">Open Script</a>
+        <a href="https://link-script-troll.com" target="_blank" class="download-btn">Open Script</a>
       </div>
     </div>
     <div class="download-card">
@@ -240,7 +229,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>Blox Fruits Script</h3>
         <p>Auto quest system updated.</p>
-        <a href="#" class="download-btn">Open Script</a>
+        <a href="https://link-script-bloxfruit.com" target="_blank" class="download-btn">Open Script</a>
       </div>
     </div>
     <div class="download-card more-item hidden">
@@ -248,7 +237,7 @@ footer p{ color:var(--text2); font-size: 14px; }
       <div class="download-content">
         <h3>OP Script Hub</h3>
         <p>Multi game support for Roblox.</p>
-        <a href="#" class="download-btn">Open Script</a>
+        <a href="https://link-script-ophub.com" target="_blank" class="download-btn">Open Script</a>
       </div>
     </div>
     <div class="no-results" id="no-script">No scripts found with that name.</div>
@@ -287,19 +276,15 @@ footer p{ color:var(--text2); font-size: 14px; }
 </footer>
 
 <script>
-// Tabs Management
 function showTab(type) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  
   document.getElementById(type).classList.remove('hidden');
   document.getElementById('btn-' + type).classList.add('active');
-  
   document.getElementById('searchInput').value = '';
   handleSearch(); 
 }
 
-// Search Logic
 function handleSearch() {
   const query = document.getElementById('searchInput').value.toLowerCase();
   const activeTabId = document.querySelector('.tab-content:not(.hidden)').id;
@@ -307,13 +292,11 @@ function handleSearch() {
   const cards = container.querySelectorAll('.download-card');
   const noResults = document.getElementById('no-' + activeTabId);
   const moreBtnWrap = document.getElementById('more-' + activeTabId);
-  
   let hasVisible = false;
 
   cards.forEach(card => {
     const title = card.querySelector('h3').innerText.toLowerCase();
     const desc = card.querySelector('p').innerText.toLowerCase();
-    
     if(title.includes(query) || desc.includes(query)) {
       card.style.display = "block";
       hasVisible = true;
@@ -321,9 +304,7 @@ function handleSearch() {
       card.style.display = "none";
     }
   });
-
   noResults.style.display = hasVisible ? "none" : "block";
-  
   if (query.length > 0) {
     moreBtnWrap.style.display = "none";
   } else {
@@ -334,13 +315,11 @@ function handleSearch() {
   }
 }
 
-// Show More Logic
 function toggleMore(type){
   const section = document.getElementById(type);
   const items = section.querySelectorAll('.more-item');
   const btn = section.querySelector('.more-btn-wrap button');
   const isExpanded = section.dataset.expanded === "1";
-  
   if(!isExpanded){
     items.forEach(el => el.classList.remove('hidden'));
     section.dataset.expanded = "1";
