@@ -55,12 +55,14 @@ nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-
 .hero p{ max-width:680px; margin:0 auto 25px; color:var(--text2); font-size:19px; line-height:1.6; }
 
 .hero-buttons{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
-.btn{ padding:15px 28px; border-radius:15px; text-decoration:none; font-weight:600; transition:.35s; display:inline-flex; align-items:center; justify-content:center; }
-.btn i { margin-right: 10px; font-size: 18px; }
+.btn{ padding:15px 28px; border-radius:15px; text-decoration:none; font-weight:600; transition:.35s; display:inline-flex; align-items:center; }
 .btn-primary{ background:linear-gradient(90deg,var(--cyan),var(--blue)); color:#000; box-shadow:var(--glow); }
 .btn-primary:hover{ transform:translateY(-4px); opacity: 0.95; }
 .btn-outline{ border:1px solid rgba(255,255,255,.1); color:var(--text); background:rgba(255,255,255,.03); }
 .btn-outline:hover{ border-color:var(--cyan); color:var(--cyan); background: rgba(0,229,255,0.05); }
+
+/* Icon Social Nút */
+.btn i { margin-right: 8px; font-size: 18px; }
 
 .stats{ margin-top:40px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
 .stat-box{ min-width:170px; padding:20px; border-radius:22px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); transition: 0.3s; }
@@ -103,11 +105,23 @@ nav{ position:sticky; top:0; z-index:1000; padding:12px 6%; display:flex; align-
 .more-btn-wrap button{ padding:10px 22px; border-radius:12px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer; font-weight: 600; transition: 0.3s; }
 
 .card{ position:relative; overflow:hidden; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:28px; padding:28px; transition:.35s; }
-.card-icon{ width:60px; height:60px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:rgba(0,229,255,0.08); color:var(--cyan); font-size:26px; margin-bottom:22px; border:1px solid rgba(0,229,255,0.15); box-shadow: 0 0 15px rgba(0,229,255,0.1); }
+.card-icon{ width:60px; height:60px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:rgba(0,229,255,.08); color: var(--cyan); text-shadow: 0 0 10px rgba(0,229,255,0.5); font-size:26px; margin-bottom:22px; border: 1px solid rgba(0,229,255,0.1); }
 
-.community-card{ text-align:center; padding:60px 30px; }
-.community-card h2{ font-size:40px; margin-bottom:20px; line-height:1.2; }
-.community-card p{ font-size:17px; color:var(--text2); line-height:1.6; margin-bottom:25px; }
+.community-card{
+  text-align:center;
+  padding:60px 30px;
+}
+.community-card h2{
+  font-size:40px;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+.community-card p{
+  font-size:17px;
+  color:var(--text2);
+  line-height:1.6;
+  margin-bottom:25px;
+}
 
 footer{ padding:30px 7%; border-top:1px solid rgba(255,255,255,.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 footer p{ color:var(--text2); font-size: 14px; }
@@ -196,17 +210,17 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card">
       <div class="download-image"><img src="images/deltax.png" alt="logo"></div>
       <div class="download-content">
-        <h3>Executor test</h3>
+        <h3>Executor Tool</h3>
         <p>Fast injection tool Android.</p>
         <a href="https://link-tai-executor.com" target="_blank" class="download-btn"><i class="fa-solid fa-download"></i>Download APK</a>
       </div>
     </div>
-    <div class="download-card">
+    <div class="download-card more-item hidden">
       <div class="download-image"><img src="images/deltax.png" alt="logo"></div>
       <div class="download-content">
-        <h3>Executor Tool</h3>
-        <p>Fast injection tool Android.</p>
-        <a href="https://link-tai-executor.com" target="_blank" class="download-btn"><i class="fa-solid fa-download"></i>Download APK</a>
+        <h3>Extra Game APK</h3>
+        <p>Bonus file for premium users.</p>
+        <a href="https://link-tai-extra.com" target="_blank" class="download-btn"><i class="fa-solid fa-download"></i>Download APK</a>
       </div>
     </div>
     <div class="no-results" id="no-apk">No APK found with that name.</div>
@@ -227,14 +241,6 @@ footer p{ color:var(--text2); font-size: 14px; }
     <div class="download-card">
       <div class="download-image"><img src="images/deltax.png" alt="logo"></div>
       <div class="download-content">
-        <h3>Test Script</h3>
-        <p>Auto troll all player</p>
-        <a href="https://link-script-troll.com" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i>Get Script</a>
-      </div>
-    </div>
-    <div class="download-card">
-      <div class="download-image"><img src="images/deltax.png" alt="logo"></div>
-      <div class="download-content">
         <h3>Troll Script</h3>
         <p>Auto troll all player</p>
         <a href="https://link-script-troll.com" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i>Get Script</a>
@@ -246,6 +252,14 @@ footer p{ color:var(--text2); font-size: 14px; }
         <h3>Blox Fruits Script</h3>
         <p>Auto quest system updated.</p>
         <a href="https://link-script-bloxfruit.com" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i>Get Script</a>
+      </div>
+    </div>
+    <div class="download-card more-item hidden">
+      <div class="download-image"><img src="images/deltax.png" alt="logo"></div>
+      <div class="download-content">
+        <h3>OP Script Hub</h3>
+        <p>Multi game support for Roblox.</p>
+        <a href="https://link-script-ophub.com" target="_blank" class="download-btn"><i class="fa-solid fa-code"></i>Get Script</a>
       </div>
     </div>
     <div class="no-results" id="no-script">No scripts found with that name.</div>
@@ -317,6 +331,9 @@ function handleSearch() {
     moreBtnWrap.style.display = "none";
   } else {
     moreBtnWrap.style.display = "block";
+    if (container.dataset.expanded !== "1") {
+       container.querySelectorAll('.more-item').forEach(el => el.classList.add('hidden'));
+    }
   }
 }
 
