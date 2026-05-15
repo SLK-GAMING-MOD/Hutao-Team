@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hutao Team</title>
+<title>Hutao Team - APK & Scripts</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,78 +25,33 @@
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
+body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Space Grotesk',sans-serif;
-  overflow-x:hidden;
-}
-
-/* Background Effects */
-.bg-blur{
-  position:fixed;
-  width:600px;
-  height:600px;
-  border-radius:50%;
-  filter:blur(120px);
-  z-index:-1;
-  opacity:.22;
-}
+/* Background Decoration */
+.bg-blur{ position:fixed; width:600px; height:600px; border-radius:50%; filter:blur(120px); z-index:-1; opacity:.22; }
 .bg1{ background:var(--cyan); top:-200px; left:-150px; }
 .bg2{ background:var(--purple); right:-180px; top:120px; }
 
-nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  padding:14px 6%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  backdrop-filter:blur(18px);
-  background:rgba(7,11,18,.72);
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-
+/* Navigation */
+nav{ position:sticky; top:0; z-index:1000; padding:14px 6%; display:flex; align-items:center; justify-content:space-between; backdrop-filter:blur(18px); background:rgba(7,11,18,.72); border-bottom:1px solid rgba(255,255,255,.05); }
 .logo-wrap{ display:flex; align-items:center; gap:18px; margin-left:-12px; }
-.logo-icon{
-  width:44px; height:44px; border-radius:14px;
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden; background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2));
-  border:1px solid rgba(255,255,255,.08); box-shadow:var(--glow);
-}
+.logo-icon{ width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(139,92,255,.2)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--glow); }
 .logo-icon img{ width:100%; height:100%; object-fit:cover; }
-.logo{
-  font-size:25px; font-weight:700; letter-spacing:.5px;
-  background:linear-gradient(90deg,var(--cyan),var(--purple));
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-}
-
+.logo{ font-size:25px; font-weight:700; letter-spacing:.5px; background:linear-gradient(90deg,var(--cyan),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 .nav-links{ display:flex; gap:28px; }
 .nav-links a{ color:var(--text2); text-decoration:none; transition:.3s; font-size:15px; }
 .nav-links a:hover{ color:var(--cyan); }
 
 /* Hero Section */
-.hero{
-  min-height:82vh; display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:40px 7% 0;
-}
+.hero{ min-height:82vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px 7% 0; }
 .hero-content{ max-width:920px; }
-.badge{
-  display:inline-flex; align-items:center; gap:10px; padding:10px 18px;
-  border-radius:999px; border:1px solid rgba(0,229,255,.2);
-  background:rgba(255,255,255,.03); color:var(--cyan); margin-bottom:22px;
-}
+.badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border-radius:999px; border:1px solid rgba(0,229,255,.2); background:rgba(255,255,255,.03); color:var(--cyan); margin-bottom:22px; }
 .badge-dot{ width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--cyan); }
 .hero h1{ font-size:82px; line-height:1; margin-bottom:18px; }
 .hero h1 span{ background:linear-gradient(90deg,var(--cyan),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 .hero p{ max-width:720px; margin:auto; color:var(--text2); font-size:20px; line-height:1.7; }
-
-/* Buttons */
 .hero-buttons{ margin-top:30px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
-.btn, .download-btn{ position:relative; z-index:5; pointer-events:auto; }
-.btn{ padding:16px 28px; border-radius:16px; text-decoration:none; font-weight:600; transition:.35s; }
+.btn{ padding:16px 28px; border-radius:16px; text-decoration:none; font-weight:600; transition:.35s; display:inline-block;}
 .btn-primary{ background:linear-gradient(90deg,var(--cyan),var(--blue)); color:#000; box-shadow:var(--glow); }
 .btn-primary:hover{ transform:translateY(-4px); }
 .btn-outline{ border:1px solid rgba(255,255,255,.1); color:var(--text); background:rgba(255,255,255,.03); }
@@ -108,92 +63,58 @@ nav{
 .stat-box h3{ font-size:34px; background:linear-gradient(90deg,var(--cyan),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 .stat-box p{ color:var(--text2); margin-top:8px; font-size:14px; }
 
-/* Search Bar Section */
-.search-container {
-  max-width: 600px;
-  margin: 0 auto 40px;
-  position: relative;
-}
-.search-input {
-  width: 100%;
-  padding: 16px 24px;
-  padding-left: 50px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text);
-  font-family: inherit;
-  font-size: 16px;
-  outline: none;
-  transition: 0.3s;
-}
-.search-input:focus {
-  border-color: var(--cyan);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
-}
-.search-icon {
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text2);
-  font-size: 20px;
-}
+/* SEARCH BAR UPGRADE */
+.search-wrapper { max-width: 500px; margin: 0 auto 40px; position: relative; }
+.search-bar { width: 100%; padding: 16px 20px 16px 50px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 16px; transition: 0.3s; }
+.search-bar:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.08); box-shadow: 0 0 15px rgba(0,225,255,0.1); }
+.search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--text2); font-size: 18px; }
 
-/* Grid & Cards */
+/* Download Center */
 .section{ padding:75px 7%; }
-.section-top{ text-align:center; margin-bottom:30px; }
+.section-top{ text-align:center; margin-bottom:45px; }
 .section-top span{ color:var(--cyan); font-size:13px; letter-spacing:2px; }
 .section-top h2{ font-size:52px; margin-top:14px; }
+.section-top p{ color:var(--text2); margin-top:12px; }
+
+.tabs{ display:flex; justify-content:center; gap:14px; margin-bottom:25px; }
+.tab-btn{ padding:10px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); color:var(--text2); cursor:pointer; transition:.3s; font-weight: 500;}
+.tab-btn.active{ color:#000; background:linear-gradient(90deg,var(--cyan),var(--blue)); border:none; }
 
 .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-.card, .download-card{ transition:.35s; }
-
-.download-card{
-  overflow:hidden; border-radius:28px; border:1px solid rgba(255,255,255,0.06);
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-}
+.download-card{ overflow:hidden; border-radius:28px; border:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); transition:.35s; }
 .download-card:hover{ transform:translateY(-8px); border-color:rgba(0,229,255,.2); }
 .download-image{ height:180px; display:flex; align-items:center; justify-content:center; font-size:60px; background:linear-gradient(135deg,rgba(0,229,255,.16),rgba(139,92,255,.18)); }
 .download-content{ padding:24px; }
 .download-content h3{ margin-bottom:10px; font-size:24px; }
-.download-content p{ color:var(--text2); line-height:1.7; margin-bottom:22px; min-height: 48px;}
-
-.download-btn{
-  display:inline-block; padding:12px 20px; border-radius:12px; text-decoration:none;
-  color:var(--cyan); background:rgba(0,229,255,.08); border:1px solid rgba(0,229,255,.22); transition:.3s;
-}
+.download-content p{ color:var(--text2); line-height:1.7; margin-bottom:22px; min-height: 48px; }
+.download-btn{ display:inline-block; padding:12px 22px; border-radius:12px; text-decoration:none; color:var(--cyan); background:rgba(0,229,255,.08); border:1px solid rgba(0,229,255,.22); transition:.3s; }
 .download-btn:hover{ background:var(--cyan); color:#000; }
 
-.tabs{ display:flex; justify-content:center; gap:14px; margin-bottom:25px; }
-.tab-btn{
-  padding:10px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.03); color:var(--text2); cursor:pointer; transition:.3s;
-}
-.tab-btn.active{ color:#000; background:linear-gradient(90deg,var(--cyan),var(--blue)); }
-
+.no-results { display: none; text-align: center; padding: 40px; color: var(--text2); font-size: 18px; grid-column: 1/-1; }
 .hidden{ display:none !important; }
 
-.more-btn{ grid-column: 1 / -1; text-align:center; margin-top:20px; }
-.more-btn button{
-  padding:10px 18px; border-radius:12px; border:1px solid rgba(0,229,255,.2);
-  background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer;
-}
+.more-btn-wrap{ text-align:center; margin-top:30px; grid-column: 1/-1; }
+.more-btn-wrap button{ padding:10px 22px; border-radius:12px; border:1px solid rgba(0,229,255,.2); background:rgba(0,229,255,.08); color:var(--cyan); cursor:pointer; font-weight: 600; }
 
-/* Community & Footer */
-.community-card{ text-align:center; padding:55px 30px; border-radius: 28px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);}
+/* Features & Community */
+.card{ position:relative; overflow:hidden; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:28px; padding:28px; transition:.35s; }
+.card-icon{ width:60px; height:60px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:rgba(0,229,255,.08); font-size:28px; margin-bottom:22px; }
+.community-card{ text-align:center; padding:55px 30px; }
 .community-card h2{ font-size:52px; margin-bottom:18px; }
+
 footer{ padding:32px 7%; border-top:1px solid rgba(255,255,255,.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 footer p{ color:var(--text2); }
+.footer-links{ display:flex; gap:18px; }
+.footer-links a{ color:var(--text2); text-decoration:none; transition:.3s; }
+.footer-links a:hover{ color:var(--cyan); }
 
 @media(max-width:900px){
-  .hero h1{ font-size:48px; }
-  .section-top h2{ font-size:32px; }
+  .hero h1{ font-size:52px; }
+  .section-top h2{ font-size:38px; }
+  .nav-links{ display:none; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="bg-blur bg1"></div>
@@ -205,7 +126,7 @@ footer p{ color:var(--text2); }
     <div class="logo">Hutao Team</div>
   </div>
   <div class="nav-links">
-    <a href="#top">Home</a>
+    <a href="#">Home</a>
     <a href="#downloads">APK</a>
     <a href="#downloads">Scripts</a>
     <a href="#community">Community</a>
@@ -219,7 +140,7 @@ footer p{ color:var(--text2); }
     <p>Discover Roblox scripts, Minecraft mods, executors, premium APKs and gaming tools inside one futuristic platform.</p>
     <div class="hero-buttons">
       <a href="#downloads" class="btn btn-primary">Explore Now</a>
-      <a href="#community" class="btn btn-outline">Join Community</a>
+      <a href="https://discord.gg/wrXccuEtN" target="_blank" class="btn btn-outline">Join Community</a>
     </div>
     <div class="stats">
       <div class="stat-box"><h3>500+</h3><p>Uploads Available</p></div>
@@ -233,17 +154,18 @@ footer p{ color:var(--text2); }
   <div class="section-top">
     <span>ALL FILES</span>
     <h2>Downloads Center</h2>
+    <p>Search and find your favorite tools instantly.</p>
   </div>
 
-  <!-- THANH TÌM KIẾM MỚI -->
-  <div class="search-container">
+  <!-- SEARCH BAR -->
+  <div class="search-wrapper">
     <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" class="search-input" placeholder="Search APK or Script name..." onkeyup="filterContent()">
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search for apk, scripts, mods..." onkeyup="handleSearch()">
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" onclick="showTab(event,'apk')">FILE APK</button>
-    <button class="tab-btn" onclick="showTab(event,'script')">SCRIPT</button>
+    <button class="tab-btn active" id="btn-apk" onclick="showTab('apk')">FILE APK</button>
+    <button class="tab-btn" id="btn-script" onclick="showTab('script')">SCRIPT</button>
   </div>
 
   <!-- APK GRID -->
@@ -275,12 +197,13 @@ footer p{ color:var(--text2); }
     <div class="download-card more-item hidden">
       <div class="download-image">🧩</div>
       <div class="download-content">
-        <h3>Extra APK</h3>
-        <p>Hidden item demo.</p>
+        <h3>Extra Game APK</h3>
+        <p>Bonus file for premium users.</p>
         <a href="#" class="download-btn">Download APK</a>
       </div>
     </div>
-    <div class="more-btn">
+    <div class="no-results" id="no-apk">No APK found with that name.</div>
+    <div class="more-btn-wrap" id="more-apk">
       <button onclick="toggleMore('apk')">Show more</button>
     </div>
   </div>
@@ -299,7 +222,7 @@ footer p{ color:var(--text2); }
       <div class="download-image">⚙️</div>
       <div class="download-content">
         <h3>Blox Fruits Script</h3>
-        <p>Auto quest system.</p>
+        <p>Auto quest system updated.</p>
         <a href="#" class="download-btn">Open Script</a>
       </div>
     </div>
@@ -307,26 +230,39 @@ footer p{ color:var(--text2); }
       <div class="download-image">🔥</div>
       <div class="download-content">
         <h3>OP Script Hub</h3>
-        <p>Multi game support.</p>
+        <p>Multi game support for Roblox.</p>
         <a href="#" class="download-btn">Open Script</a>
       </div>
     </div>
     <div class="download-card more-item hidden">
       <div class="download-image">🧪</div>
       <div class="download-content">
-        <h3>Hidden Script</h3>
-        <p>Extra script demo.</p>
+        <h3>Beta Script</h3>
+        <p>Experimental features only.</p>
         <a href="#" class="download-btn">Open Script</a>
       </div>
     </div>
-    <div class="more-btn">
+    <div class="no-results" id="no-script">No scripts found with that name.</div>
+    <div class="more-btn-wrap" id="more-script">
       <button onclick="toggleMore('script')">Show more</button>
     </div>
   </div>
 </section>
 
+<section class="section" id="why">
+  <div class="section-top">
+    <span>WHY HUTAO TEAM</span>
+    <h2>Everything You Need</h2>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="card-icon">⚡</div><h3>Fast Downloads</h3><p>Direct high-speed APK and script downloads.</p></div>
+    <div class="card"><div class="card-icon">🛡️</div><h3>Safe Files</h3><p>All files checked before upload.</p></div>
+    <div class="card"><div class="card-icon">🔥</div><h3>Daily Updates</h3><p>New executors, Roblox scripts every day.</p></div>
+  </div>
+</section>
+
 <section class="section" id="community">
-  <div class="community-card">
+  <div class="card community-card">
     <h2>Join The Community</h2>
     <p>Get updates about APKs, scripts and mods.</p>
     <div class="hero-buttons">
@@ -338,53 +274,71 @@ footer p{ color:var(--text2); }
 
 <footer>
   <p>© 2026 Hutao Team — All rights reserved.</p>
-  <div class="footer-links">
-    <a href="#">Privacy</a>
-    <a href="#">FAQ</a>
-    <a href="#">Contact</a>
-  </div>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a></div>
 </footer>
 
 <script>
-// Chuyển đổi qua lại giữa tab APK và Script
-function showTab(event, id){
+// Quản lý Tabs
+function showTab(type) {
+  // Ẩn tất cả nội dung
   document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
   
-  // Reset tìm kiếm khi chuyển tab
-  document.getElementById('searchInput').value = "";
-  filterContent();
+  // Hiện tab được chọn
+  document.getElementById(type).classList.remove('hidden');
+  document.getElementById('btn-' + type).classList.add('active');
+  
+  // Reset tìm kiếm khi đổi tab
+  document.getElementById('searchInput').value = '';
+  handleSearch(); 
 }
 
-// Logic Tìm kiếm
-function filterContent() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const activeTab = document.querySelector('.tab-content:not(.hidden)');
-  const cards = activeTab.querySelectorAll('.download-card');
+// Logic Tìm kiếm nâng cao
+function handleSearch() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const activeTabId = document.querySelector('.tab-content:not(.hidden)').id;
+  const container = document.getElementById(activeTabId);
+  const cards = container.querySelectorAll('.download-card');
+  const noResults = document.getElementById('no-' + activeTabId);
+  const moreBtnWrap = document.getElementById('more-' + activeTabId);
+  
+  let hasVisible = false;
 
   cards.forEach(card => {
     const title = card.querySelector('h3').innerText.toLowerCase();
     const desc = card.querySelector('p').innerText.toLowerCase();
     
-    if (title.includes(input) || desc.includes(input)) {
+    if(title.includes(query) || desc.includes(query)) {
       card.style.display = "block";
+      hasVisible = true;
     } else {
       card.style.display = "none";
     }
   });
+
+  // Hiện thông báo nếu không tìm thấy gì
+  noResults.style.display = hasVisible ? "none" : "block";
+  
+  // Ẩn nút "Show more" nếu đang tìm kiếm
+  if (query.length > 0) {
+    moreBtnWrap.style.display = "none";
+  } else {
+    moreBtnWrap.style.display = "block";
+    // Nếu reset tìm kiếm, cần ẩn lại các more-item
+    if (container.dataset.expanded !== "1") {
+       container.querySelectorAll('.more-item').forEach(el => el.classList.add('hidden'));
+    }
+  }
 }
 
-// Logic Hiển thị thêm
+// Logic Hiển thị thêm (Show More)
 function toggleMore(type){
   const section = document.getElementById(type);
   const items = section.querySelectorAll('.more-item');
-  const btn = section.querySelector('.more-btn button');
-  const expanded = section.dataset.expanded === "1";
+  const btn = section.querySelector('.more-btn-wrap button');
+  const isExpanded = section.dataset.expanded === "1";
   
-  if(!expanded){
+  if(!isExpanded){
     items.forEach(el => el.classList.remove('hidden'));
     section.dataset.expanded = "1";
     btn.textContent = "Hide less";
