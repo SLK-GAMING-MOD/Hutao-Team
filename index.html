@@ -232,7 +232,7 @@ footer p{ color:var(--text2); font-size: 14px; }
         <a href="https://link4m.org/ZcipvOP" target="_blank" class="download-btn"><i class="fa-solid fa-download"></i>Download APK</a>
       </div>
     </div>
-    <div class="download-card">
+    <div class="download-card more-item hidden">
       <div class="download-image"><img src="images/trigon.png" alt="logo"></div>
       <div class="download-content">
         <h3>Trigon VNG V2.720 (Mod Login)</h3>
@@ -246,7 +246,6 @@ footer p{ color:var(--text2); font-size: 14px; }
             <i class="fa-solid fa-download"></i> Download APK 2
           </a>
         </div>
-
       </div>
     </div>
     <div class="no-results" id="no-apk">No APK found with that name.</div>
@@ -345,18 +344,24 @@ function handleSearch() {
   cards.forEach(card => {
     const title = card.querySelector('h3').innerText.toLowerCase();
     const desc = card.querySelector('p').innerText.toLowerCase();
+    
     if(title.includes(query) || desc.includes(query)) {
+      // Khi tìm kiếm, hiển thị card phù hợp và xóa tạm thời class hidden nếu có
+      card.classList.remove('hidden');
       card.style.display = "block";
       hasVisible = true;
     } else {
       card.style.display = "none";
     }
   });
+
   noResults.style.display = hasVisible ? "none" : "block";
+
   if (query.length > 0) {
     moreBtnWrap.style.display = "none";
   } else {
     moreBtnWrap.style.display = "block";
+    // Trả lại trạng thái ẩn/hiện ban đầu dựa trên nút "Show more"
     if (container.dataset.expanded !== "1") {
        container.querySelectorAll('.more-item').forEach(el => el.classList.add('hidden'));
     }
@@ -368,12 +373,19 @@ function toggleMore(type){
   const items = section.querySelectorAll('.more-item');
   const btn = section.querySelector('.more-btn-wrap button');
   const isExpanded = section.dataset.expanded === "1";
+  
   if(!isExpanded){
-    items.forEach(el => el.classList.remove('hidden'));
+    items.forEach(el => {
+        el.classList.remove('hidden');
+        el.style.display = "block";
+    });
     section.dataset.expanded = "1";
     btn.textContent = "Hide less";
   } else {
-    items.forEach(el => el.classList.add('hidden'));
+    items.forEach(el => {
+        el.classList.add('hidden');
+        el.style.display = "none";
+    });
     section.dataset.expanded = "0";
     btn.textContent = "Show more";
   }
